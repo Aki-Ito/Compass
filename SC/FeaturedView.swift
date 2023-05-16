@@ -9,7 +9,10 @@ import SwiftUI
 
 struct FeaturedView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            
+        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .background()
     }
 }
 
