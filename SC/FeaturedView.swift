@@ -14,31 +14,52 @@ struct FeaturedView: View {
     @State var currentIndex: Int = 0
     
     var body: some View {
-        VStack(spacing: 15){
-            HeaderView()
-            SearchBar()
-            
-            //MARK: Custom Carousel
-            Carousel(index: $currentIndex, items: movies, cardPadding: 150, id: \.id) { movie,cardSize in
+        ZStack{
+            SCBackgroundView()
+            VStack(spacing: 15){
+                HeaderView()
+                SearchBar()
                 
-                Image(movie.artwork)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: cardSize.width,height: cardSize.height)
-                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                //MARK: Custom Carousel
+                Carousel(index: $currentIndex, items: movies, cardPadding: 150, id: \.id) { movie,cardSize in
+                    
+                    ZStack {
+                        Text(movie.movieTitle)
+                        
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(.white)
+                            .frame(width: cardSize.width, height: cardSize.height)
+                            .opacity(0.1)
+                            .background(
+                                Color.white.opacity(0.08)
+                                    .blur(radius: 10)
+                            )
+                            .background(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(
+                                        .linearGradient(.init(colors: [
+                                            Color("CirclePink2"),
+                                            Color("CirclePink2").opacity(0.5),
+                                            .clear,
+                                            Color("CirclePink1"),
+                                            Color("CirclePink1"),
+                                        ]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                                        ,lineWidth: 2.5
+                                    )
+                                    .padding(2)
+                            )
+                            .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: -5)
+                            .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
+                    }
+                }
+                .padding(.horizontal,-15)
+                .padding(.vertical)
+                
+                TabBar()
             }
-            .padding(.horizontal,-15)
-            .padding(.vertical)
-            
-            TabBar()
+            .padding([.horizontal, .top],15)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         }
-        .padding([.horizontal, .top],15)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-            .background{
-                GeometryReader { proxy in
-                    LinearGradient(colors: [Color("BG1"),Color("BG2")], startPoint: .top, endPoint: .bottom)
-                }.ignoresSafeArea()
-            }
     }
     
     //MARK: TabBar

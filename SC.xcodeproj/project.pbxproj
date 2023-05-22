@@ -16,6 +16,7 @@
 		2CA0EDF42A13978D00653D05 /* FeaturedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0EDF32A13978D00653D05 /* FeaturedModel.swift */; };
 		2CD037C82A192EEF00C3B4C7 /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD037C72A192EEF00C3B4C7 /* TabModel.swift */; };
 		2CD037CA2A19348C00C3B4C7 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD037C92A19348C00C3B4C7 /* Carousel.swift */; };
+		2CD037CD2A1B990900C3B4C7 /* SCBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD037CC2A1B990900C3B4C7 /* SCBackgroundView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		2CA0EDF32A13978D00653D05 /* FeaturedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedModel.swift; sourceTree = "<group>"; };
 		2CD037C72A192EEF00C3B4C7 /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
 		2CD037C92A19348C00C3B4C7 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		2CD037CC2A1B990900C3B4C7 /* SCBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBackgroundView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				2CD037C92A19348C00C3B4C7 /* Carousel.swift */,
 				2C82567C2A0CC03C002C31F9 /* Assets.xcassets */,
 				2C82567E2A0CC03C002C31F9 /* Preview Content */,
+				2CD037CC2A1B990900C3B4C7 /* SCBackgroundView.swift */,
 			);
 			path = SC;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				2C82567B2A0CC03B002C31F9 /* ContentView.swift in Sources */,
 				2CA0EDEE2A0FE2A400653D05 /* FeaturedView.swift in Sources */,
+				2CD037CD2A1B990900C3B4C7 /* SCBackgroundView.swift in Sources */,
 				2C8256792A0CC03B002C31F9 /* SCApp.swift in Sources */,
 				2CA0EDF42A13978D00653D05 /* FeaturedModel.swift in Sources */,
 				2CD037C82A192EEF00C3B4C7 /* TabModel.swift in Sources */,
