@@ -13,5 +13,7 @@ struct Movie: Identifiable, Equatable{
 }
 
 var movies: [Movie] = [
-
+   Movie(movieTitle: "Spirited Away", artwork: "Movie1"),
+   Movie(movieTitle: "MI rogue nation", artwork: "Movie2"),
+   Movie(movieTitle: "Doctor Strange", artwork: "Movie3")
 ]
