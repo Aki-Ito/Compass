@@ -11,6 +11,8 @@ struct SCListView: View {
     
     @State var columns = [GridItem(.fixed(UIScreen.main.bounds.width - 40))]
     
+    @State private var isShowingAddView: Bool = false
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -75,6 +77,19 @@ struct SCListView: View {
                     }
                 }
             }.navigationBarTitle("List")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            isShowingAddView.toggle()
+                        } label: {
+                            Image(systemName: "pencil")
+                                .foregroundColor(Color("CirclePink1"))
+                        }
+                        .sheet(isPresented:$isShowingAddView) {
+                            AddSolutionView()
+                        }
+                    }
+                }
         }
     }
 }
