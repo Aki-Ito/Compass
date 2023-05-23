@@ -14,24 +14,23 @@ struct AddSolutionView: View {
     @State var solutionText: String = "write the solution"
     
     var body: some View {
-        ZStack{
-            Color.white.opacity(0.7)
-                .ignoresSafeArea()
-            
-            VStack {
-                HStack {
+        NavigationStack {
+            ZStack{
+                Color("BG2")
+                    .ignoresSafeArea()
+                VStack{
+                    problemView()
+                    attachmentView()
                     Spacer()
-                    Button("Save") {
-                        print("tapped")
-                    }
-                    .padding()
-                    .foregroundColor(Color("CirclePink1"))
                 }
-                .frame(width: screenSizeWidth, height: 120)
-                
-                problemView()
-                attachmentView()
-                Spacer()
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("save") {
+                            print("save")
+                        }
+                        .foregroundColor(Color("CirclePink1"))
+                    }
+                }
             }
         }
     }
@@ -47,6 +46,7 @@ struct AddSolutionView: View {
                 Spacer()
             }
             TextEditor(text: $problemText)
+                .scrollContentBackground(Visibility.hidden)
                 .padding()
                 .frame(height: 100)
                 .background(RoundedRectangle(cornerRadius: 10).stroke(
@@ -62,6 +62,7 @@ struct AddSolutionView: View {
             }
             
             TextEditor(text: $solutionText)
+                .scrollContentBackground(Visibility.hidden)
                 .padding()
                 .frame(height: 200)
                 .background(RoundedRectangle(cornerRadius: 10).stroke(
