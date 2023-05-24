@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-public struct SolutionModel:Codable, Identifiable{
+public struct SolutionModel:Codable, Hashable, Identifiable{
     @DocumentID public var id: String?
     var problem: String
     var solution: String
@@ -30,6 +30,22 @@ extension SolutionModel{
             //MARK: use test account
             let solutionRef = db.collection("users").document("BqfIaUDFrmTW5otiSOA9USKgplK2").collection("solutions")
             try solutionRef.addDocument(from: solution)
+        }catch{
+            throw error
+        }
+    }
+    
+    static func fetchSolution() async throws -> [SolutionModel]{
+        do{
+            let db = Firestore.firestore()
+            let solutionRef = db.collection("users").document("BqfIaUDFrmTW5otiSOA9USKgplK2").collection("solutions")
+            
+            let querySnapshot = try await solutionRef.getDocuments()
+            let solutions = try querySnapshot.documents.map {
+                try $0.data(as: SolutionModel.self)
+            }
+            
+            return solutions
         }catch{
             throw error
         }

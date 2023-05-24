@@ -28,6 +28,7 @@
 		2CD037E12A1D1A6A00C3B4C7 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 2CD037E02A1D1A6A00C3B4C7 /* FirebaseStorageCombine-Community */; };
 		2CD037E32A1D1DDA00C3B4C7 /* SolutionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD037E22A1D1DDA00C3B4C7 /* SolutionModel.swift */; };
 		2CD037E52A1DF82E00C3B4C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CD037E42A1DF82E00C3B4C7 /* GoogleService-Info.plist */; };
+		2CD037E72A1E819C00C3B4C7 /* FetchSCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD037E62A1E819C00C3B4C7 /* FetchSCViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		2CD037D12A1D199300C3B4C7 /* AddSCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSCViewModel.swift; sourceTree = "<group>"; };
 		2CD037E22A1D1DDA00C3B4C7 /* SolutionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionModel.swift; sourceTree = "<group>"; };
 		2CD037E42A1DF82E00C3B4C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2CD037E62A1E819C00C3B4C7 /* FetchSCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSCViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				2CD037D12A1D199300C3B4C7 /* AddSCViewModel.swift */,
+				2CD037E62A1E819C00C3B4C7 /* FetchSCViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C82567B2A0CC03B002C31F9 /* ContentView.swift in Sources */,
+				2CD037E72A1E819C00C3B4C7 /* FetchSCViewModel.swift in Sources */,
 				2CA0EDEE2A0FE2A400653D05 /* FeaturedView.swift in Sources */,
 				2CD037E32A1D1DDA00C3B4C7 /* SolutionModel.swift in Sources */,
 				2CD037D22A1D199300C3B4C7 /* AddSCViewModel.swift in Sources */,

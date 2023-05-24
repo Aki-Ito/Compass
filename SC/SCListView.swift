@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import Combine
 import FirebaseFirestore
 
 struct SCListView: View {
     @State var columns = [GridItem(.fixed(UIScreen.main.bounds.width - 40))]
     
     @State private var isShowingAddView: Bool = false
+    
+    @ObservedObject var viewModel = FetchSCViewModel()
     
     var body: some View {
         NavigationView {
@@ -43,35 +46,20 @@ struct SCListView: View {
                 //MARK: ListView
                 ScrollView {
                     LazyVGrid(columns: columns) {
-                        ForEach((1...50), id: \.self) { num in
+                        ForEach(viewModel.solutions) { solution in
                             ZStack {
-                                RoundedRectangle(cornerRadius: 25)
-                                    .fill(.white)
-                                    .frame(height: 100)
-                                    .opacity(0.1)
-                                    .background(
-                                        Color.white.opacity(0.08)
-                                            .blur(radius: 10)
-                                    )
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 25)
-                                            .stroke(
-                                                .linearGradient(.init(colors: [
-                                                    Color("CirclePink1"),
-                                                    Color("CirclePink1").opacity(0.5),
-                                                    .clear,
-                                                    .clear,
-                                                    Color("CirclePink2"),
-                                                    ]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                                                ,lineWidth: 2.5
-                                            )
-                                            .padding(2)
-                                    )
-                                    .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: -5)
-                                    .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
-
-                                Text("\(num)")
-                                    .padding()
+                                //MARK: backGroundView
+                                listBackgroundView()
+                                HStack{
+                                    VStack(alignment: .leading){
+                                        Text(solution.problem)
+                                            .font(.title2)
+                                            .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 0))
+                                        Text(solution.solution)
+                                            .padding(EdgeInsets(top: 2, leading: 30, bottom: 0, trailing: 0))
+                                    }
+                                    Spacer()
+                                }
                             }
                         }
                     }
@@ -90,7 +78,40 @@ struct SCListView: View {
                         }
                     }
                 }
+        }.onAppear{
+            //MARK: fetch data
+            Task{
+                try await viewModel.fetchSolutions()
+            }
         }
+    }
+    
+    @ViewBuilder
+    func listBackgroundView() -> some View {
+        RoundedRectangle(cornerRadius: 25)
+            .fill(.white)
+            .frame(height: 100)
+            .opacity(0.1)
+            .background(
+                Color.white.opacity(0.08)
+                    .blur(radius: 10)
+            )
+            .background(
+                RoundedRectangle(cornerRadius: 25)
+                    .stroke(
+                        .linearGradient(.init(colors: [
+                            Color("CirclePink1"),
+                            Color("CirclePink1").opacity(0.5),
+                            .clear,
+                            .clear,
+                            Color("CirclePink2"),
+                        ]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                        ,lineWidth: 2.5
+                    )
+                    .padding(2)
+            )
+            .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: -5)
+            .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
     }
 }
 
