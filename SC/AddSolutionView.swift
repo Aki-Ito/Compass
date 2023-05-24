@@ -12,6 +12,7 @@ struct AddSolutionView: View {
     let screenSizeWidth = UIScreen.main.bounds.width
     @State var problemText: String = ""
     @State var solutionText: String = ""
+    @State var stepperValue: Int = 0
     
     var body: some View {
         NavigationStack {
@@ -32,7 +33,7 @@ struct AddSolutionView: View {
                                    try await viewModel.addSolution(problem:problemText,
                                                                 solution:solutionText,
                                                                 createAt:Date(),
-                                                                importance:5)
+                                                                importance:stepperValue)
                                 }catch{
                                     throw error
                                 }
@@ -85,22 +86,27 @@ struct AddSolutionView: View {
     func attachmentView() -> some View{
         VStack{
             HStack{
-                Text("Attachment")
+                Text("Importance")
                     .font(.title2)
                 Spacer()
+                Stepper(value: $stepperValue, in: 0...10){
+                    Text("\(stepperValue)")
+                        .padding(EdgeInsets(top: 4, leading: 0, bottom: 0, trailing: 0))
+                }
             }.padding()
             
-            ScrollView(.horizontal, showsIndicators: false){
-                HStack{
-                    ForEach((1...10),id: \.self) { data in
-                        RoundedRectangle(cornerRadius: 2)
-                            .frame(width: 100,height: 100)
-                            .foregroundColor(Color("CirclePink1"))
-                            .aspectRatio(contentMode: .fit)
-                            .cornerRadius(10)
-                    }
-                }.padding(.leading)
-            }
+                
+//            ScrollView(.horizontal, showsIndicators: false){
+//                HStack{
+//                    ForEach((1...10),id: \.self) { data in
+//                        RoundedRectangle(cornerRadius: 2)
+//                            .frame(width: 100,height: 100)
+//                            .foregroundColor(Color("CirclePink1"))
+//                            .aspectRatio(contentMode: .fit)
+//                            .cornerRadius(10)
+//                    }
+//                }.padding(.leading)
+//            }
         }
     }
 }
