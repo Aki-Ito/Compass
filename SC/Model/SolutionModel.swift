@@ -20,14 +20,15 @@ public struct SolutionModel:Codable, Identifiable{
 }
 
 extension SolutionModel{
-   func addSolution(solution: SolutionModel) async throws{
+    static func addSolution(solution: SolutionModel) async throws{
         do{
-            let user = Auth.auth().currentUser
+            //            let user = Auth.auth().currentUser
             let db = Firestore.firestore()
-            guard let user = user else {
-                return
-            }
-            let solutionRef = db.collection("users").document(user.uid).collection("solutions")
+            //            guard let user = user else {
+            //                return
+            //            }
+            //MARK: use test account
+            let solutionRef = db.collection("users").document("BqfIaUDFrmTW5otiSOA9USKgplK2").collection("solutions")
             try solutionRef.addDocument(from: solution)
         }catch{
             throw error

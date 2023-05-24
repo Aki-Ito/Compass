@@ -13,13 +13,10 @@ import FirebaseFirestoreSwift
 
 class AddSCViewModel: ObservableObject{
     
-    @Published var solutionModel: SolutionModel
-    
-    init(solutionModel: SolutionModel){
-        self.solutionModel = solutionModel
+    func addSolution(problem: String, solution: String, createAt: Date, importance: Int) async throws{
+        let createAtTimeStamp: Timestamp = Timestamp(date: createAt)
+        let contents = SolutionModel(problem: problem, solution: solution, importance: importance, createdAt: createAtTimeStamp)
+        try await SolutionModel.addSolution(solution: contents)
     }
     
-    func addSolution() async throws{
-        try await solutionModel.addSolution(solution: self.solutionModel)
-    }
 }

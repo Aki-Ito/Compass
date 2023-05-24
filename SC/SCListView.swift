@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct SCListView: View {
-    
     @State var columns = [GridItem(.fixed(UIScreen.main.bounds.width - 40))]
     
     @State private var isShowingAddView: Bool = false

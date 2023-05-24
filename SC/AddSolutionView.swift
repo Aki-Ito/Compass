@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct AddSolutionView: View {
-    
+    var viewModel = AddSCViewModel()
     let screenSizeWidth = UIScreen.main.bounds.width
-    @State var problemText: String = "write the problem"
-    @State var solutionText: String = "write the solution"
+    @State var problemText: String = ""
+    @State var solutionText: String = ""
     
     var body: some View {
         NavigationStack {
@@ -26,7 +26,17 @@ struct AddSolutionView: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button("save") {
-                            print("save")
+                            //MARK: access viewModel
+                            Task{
+                                do{
+                                   try await viewModel.addSolution(problem:problemText,
+                                                                solution:solutionText,
+                                                                createAt:Date(),
+                                                                importance:5)
+                                }catch{
+                                    throw error
+                                }
+                            }
                         }
                         .foregroundColor(Color("CirclePink1"))
                     }
