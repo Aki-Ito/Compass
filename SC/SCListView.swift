@@ -10,11 +10,13 @@ import Combine
 import FirebaseFirestore
 
 struct SCListView: View {
+    let screenHeight = UIScreen.main.bounds.height
+    
     @State var columns = [GridItem(.fixed(UIScreen.main.bounds.width - 40))]
     
     @State private var isShowingAddView: Bool = false
     
-    @ObservedObject var viewModel = FetchSCViewModel()
+    @StateObject var viewModel = FetchSCViewModel()
     
     var body: some View {
         NavigationView {
@@ -64,7 +66,8 @@ struct SCListView: View {
                         }
                     }
                 }
-            }.navigationBarTitle("List")
+            }
+            .navigationBarTitle("List")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
@@ -73,11 +76,18 @@ struct SCListView: View {
                             Image(systemName: "pencil")
                                 .foregroundColor(Color("CirclePink1"))
                         }
-                        .sheet(isPresented:$isShowingAddView) {
+                        .sheet(isPresented:$isShowingAddView, onDismiss: {
+                            //MARK: fetch data
+                            Task{
+                                try await viewModel.fetchSolutions()
+                            }
+                        }) {
                             AddSolutionView()
+                                .presentationDetents([.height(screenHeight*0.7)])
                         }
                     }
                 }
+                
         }.onAppear{
             //MARK: fetch data
             Task{
@@ -88,30 +98,32 @@ struct SCListView: View {
     
     @ViewBuilder
     func listBackgroundView() -> some View {
-        RoundedRectangle(cornerRadius: 25)
-            .fill(.white)
-            .frame(height: 100)
-            .opacity(0.1)
-            .background(
-                Color.white.opacity(0.08)
-                    .blur(radius: 10)
-            )
-            .background(
-                RoundedRectangle(cornerRadius: 25)
-                    .stroke(
-                        .linearGradient(.init(colors: [
-                            Color("CirclePink1"),
-                            Color("CirclePink1").opacity(0.5),
-                            .clear,
-                            .clear,
-                            Color("CirclePink2"),
-                        ]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                        ,lineWidth: 2.5
-                    )
-                    .padding(2)
-            )
-            .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: -5)
-            .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
+        NavigationLink(destination: AddSolutionView()){
+            RoundedRectangle(cornerRadius: 25)
+                .fill(.white)
+                .frame(height: 100)
+                .opacity(0.1)
+                .background(
+                    Color.white.opacity(0.08)
+                        .blur(radius: 10)
+                )
+                .background(
+                    RoundedRectangle(cornerRadius: 25)
+                        .stroke(
+                            .linearGradient(.init(colors: [
+                                Color("CirclePink1"),
+                                Color("CirclePink1").opacity(0.5),
+                                .clear,
+                                .clear,
+                                Color("CirclePink2"),
+                            ]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                            ,lineWidth: 2.5
+                        )
+                        .padding(2)
+                )
+                .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: -5)
+                .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
+        }.tint(Color("CirclePink1"))
     }
 }
 

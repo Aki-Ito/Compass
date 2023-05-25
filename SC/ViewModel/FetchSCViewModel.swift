@@ -10,8 +10,9 @@ import Combine
 class FetchSCViewModel: ObservableObject{
     @Published var solutions: [SolutionModel] = []
     
+    @MainActor
     func fetchSolutions() async throws{
-       let solutions = try await SolutionModel.fetchSolution()
+        let solutions = try await SolutionModel.fetchSolution()
         self.solutions = solutions
     }
 }

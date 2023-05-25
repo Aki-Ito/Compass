@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct AddSolutionView: View {
-    var viewModel = AddSCViewModel()
+    var addSCViewModel = AddSCViewModel()
+    var fetchSCViewModel = FetchSCViewModel()
     let screenSizeWidth = UIScreen.main.bounds.width
     @State var problemText: String = ""
     @State var solutionText: String = ""
@@ -30,7 +31,7 @@ struct AddSolutionView: View {
                             //MARK: access viewModel
                             Task{
                                 do{
-                                   try await viewModel.addSolution(problem:problemText,
+                                   try await addSCViewModel.addSolution(problem:problemText,
                                                                 solution:solutionText,
                                                                 createAt:Date(),
                                                                 importance:stepperValue)
