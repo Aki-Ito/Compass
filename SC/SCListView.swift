@@ -11,6 +11,7 @@ import FirebaseFirestore
 
 struct SCListView: View {
     let screenHeight = UIScreen.main.bounds.height
+    let screenWidth = UIScreen.main.bounds.width
     
     @State var columns = [GridItem(.fixed(UIScreen.main.bounds.width - 40))]
     
@@ -19,7 +20,6 @@ struct SCListView: View {
     @StateObject var viewModel = FetchSCViewModel()
     
     var body: some View {
-        NavigationView {
             ZStack {
                 //MARK: backgroundView
                 LinearGradient(colors: [Color( "BG1"),Color("BG2")], startPoint: .top, endPoint: .bottom)
@@ -56,8 +56,10 @@ struct SCListView: View {
                                     VStack(alignment: .leading){
                                         Text(solution.problem)
                                             .font(.title2)
+                                            .frame(height: 20, alignment: .leading)
                                             .padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 0))
                                         Text(solution.solution)
+                                            .frame(height: 20, alignment: .leading)
                                             .padding(EdgeInsets(top: 2, leading: 30, bottom: 0, trailing: 0))
                                     }
                                     Spacer()
@@ -66,6 +68,7 @@ struct SCListView: View {
                         }
                     }
                 }
+                .padding()
             }
             .navigationBarTitle("List")
                 .toolbar {
@@ -87,8 +90,7 @@ struct SCListView: View {
                         }
                     }
                 }
-                
-        }.onAppear{
+                .onAppear{
             //MARK: fetch data
             Task{
                 try await viewModel.fetchSolutions()
