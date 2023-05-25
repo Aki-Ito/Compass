@@ -12,53 +12,61 @@ struct FeaturedView: View {
     @Namespace var animation
     
     @State var currentIndex: Int = 0
+    @StateObject var viewModel = FetchSCViewModel()
     
     var body: some View {
-        ZStack{
-            SCBackgroundView()
-            VStack(spacing: 15){
-                HeaderView()
-                SearchBar()
-                
-                //MARK: Custom Carousel
-                Carousel(index: $currentIndex, items: movies, cardPadding: 150, id: \.id) { movie,cardSize in
-                    
-                    ZStack {
-                        Text(movie.movieTitle)
-                        
-                        RoundedRectangle(cornerRadius: 20)
-                            .fill(.white)
-                            .frame(width: cardSize.width, height: cardSize.height)
-                            .opacity(0.1)
-                            .background(
-                                Color.white.opacity(0.08)
-                                    .blur(radius: 10)
-                            )
-                            .background(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(
-                                        .linearGradient(.init(colors: [
-                                            Color("CirclePink2"),
-                                            Color("CirclePink2").opacity(0.5),
-                                            .clear,
-                                            Color("CirclePink1"),
-                                            Color("CirclePink1"),
-                                        ]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                                        ,lineWidth: 2.5
-                                    )
-                                    .padding(2)
-                            )
-                            .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: -5)
-                            .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
+        NavigationView {
+            ZStack{
+                SCBackgroundView()
+                VStack(spacing: 15){
+                    HeaderView()
+                    SearchBar()
+                    //MARK: Custom Carousel
+                    Carousel(index: $currentIndex, items: viewModel.solutions, cardPadding: 150, id: \.id) { solution,cardSize in
+                        //                        NavigationLink(destination: AddSolutionView(problemText: solution.problem, solutionText: solution.solution, stepperValue: solution.importance)){
+                        ZStack {
+                            Text(solution.problem)
+                            
+                            RoundedRectangle(cornerRadius: 20)
+                                .fill(.white)
+                                .frame(width: cardSize.width, height: cardSize.height)
+                                .opacity(0.1)
+                                .background(
+                                    Color.white.opacity(0.08)
+                                        .blur(radius: 10)
+                                )
+                                .background(
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .stroke(
+                                            .linearGradient(.init(colors: [
+                                                Color("CirclePink2"),
+                                                Color("CirclePink2").opacity(0.5),
+                                                .clear,
+                                                Color("CirclePink1"),
+                                                Color("CirclePink1"),
+                                            ]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                                            ,lineWidth: 2.5
+                                        )
+                                        .padding(2)
+                                )
+                                .shadow(color: .black.opacity(0.1), radius: 5, x: -5, y: -5)
+                                .shadow(color: .black.opacity(0.1), radius: 5, x: 5, y: 5)
+                        }
+                        .padding(.horizontal,-15)
+                        .padding(.vertical)
+                        //                        }
                     }
+                    
+                    TabBar()
                 }
-                .padding(.horizontal,-15)
-                .padding(.vertical)
-                
-                TabBar()
+                .padding([.horizontal, .top],15)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
             }
-            .padding([.horizontal, .top],15)
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        }
+        .onAppear{
+            Task{
+                try await viewModel.fetchSolutions()
+            }
         }
     }
     
@@ -99,21 +107,14 @@ struct FeaturedView: View {
     func SearchBar() -> some View{
         HStack(spacing: 15) {
             Image("Search")
-                .renderingMode(.template)
+                .renderingMode(.original)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 28, height: 28)
+                .frame(width: 20, height: 20)
                 .foregroundColor(.gray)
             
             TextField("Search", text: .constant(""))
                 .padding(.vertical, 10)
-            
-            Image("Mic")
-                .renderingMode(.template)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 28, height: 28)
-                .foregroundColor(.gray)
         }
         .padding(.horizontal)
         .padding(.vertical,6)
@@ -123,32 +124,39 @@ struct FeaturedView: View {
         }
         .padding(.top,20)
     }
+}
+
+//MARK: HeaderView
+@ViewBuilder
+func HeaderView() -> some View{
     
-    //MARK: HeaderView
-    @ViewBuilder
-    func HeaderView() -> some View{
-        HStack {
-            VStack(alignment: .leading, spacing: 6) {
+    HStack {
+        VStack(alignment: .leading, spacing: 6) {
+            NavigationLink(destination: SCListView()){
                 (Text("Hello")
                     .fontWeight(.semibold) +
-                Text("Aki")
+                 Text("Aki")
                 ).font(.title2)
                 
                 Text("see featured solution")
                     .font(.callout)
                     .foregroundColor(.gray)
-
+                
             }.frame(maxWidth: .infinity, alignment: .leading)
-            
-            Button {
-                print("")
-            } label: {
-                Image("")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 50, height: 50)
-                    .clipShape(Circle())
-            }
+        }
+        Button {
+            print("")
+        } label: {
+            Image("")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 50, height: 50)
+                .clipShape(Circle())
+                .background{
+                    Circle().stroke(
+                        Color("CirclePink1")
+                    )
+                }
         }
     }
 }

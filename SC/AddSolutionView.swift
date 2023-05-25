@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct AddSolutionView: View {
+    //MARK: CHECK INDEX
     var addSCViewModel = AddSCViewModel()
     var fetchSCViewModel = FetchSCViewModel()
     let screenSizeWidth = UIScreen.main.bounds.width
-    @State var problemText: String = ""
-    @State var solutionText: String = ""
-    @State var stepperValue: Int = 0
+    @State var problemText: String
+    @State var solutionText: String
+    @State var stepperValue: Int
     
     var body: some View {
         NavigationStack {
@@ -114,6 +115,6 @@ struct AddSolutionView: View {
 
 struct AddSolutionView_Previews: PreviewProvider {
     static var previews: some View {
-        AddSolutionView()
+        AddSolutionView(problemText: "", solutionText: "", stepperValue: 3)
     }
 }

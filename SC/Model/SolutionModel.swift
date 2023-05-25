@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-public struct SolutionModel:Codable, Hashable, Identifiable{
+public struct SolutionModel:Codable, Hashable, Identifiable, Equatable{
     @DocumentID public var id: String?
     var problem: String
     var solution: String
