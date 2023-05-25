@@ -100,7 +100,7 @@ struct SCListView: View {
     
     @ViewBuilder
     func listBackgroundView(problem: String, solution: String, stepperValue: Int) -> some View {
-        NavigationLink(destination: AddSolutionView(problemText: problem, solutionText: solution, stepperValue: stepperValue)){
+        NavigationLink(destination: EditSolutionView(problemText: problem, solutionText: solution, stepperValue: stepperValue)){
             RoundedRectangle(cornerRadius: 25)
                 .fill(.white)
                 .frame(height: 100)
