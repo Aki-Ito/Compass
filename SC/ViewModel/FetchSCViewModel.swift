@@ -15,6 +15,11 @@ class FetchSCViewModel: ObservableObject{
         let solutions = try await SolutionModel.fetchSolution()
         self.solutions = solutions
     }
+    
+    func fetchFeaturedSolutions() async throws{
+        let featuredSolutions = try await SolutionModel.fetchFeaturedSolution()
+        self.solutions = featuredSolutions
+    }
 }
 
 
