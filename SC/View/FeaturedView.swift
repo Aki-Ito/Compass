@@ -22,7 +22,7 @@ struct FeaturedView: View {
                     HeaderView()
                     SearchBar()
                     //MARK: Custom Carousel
-                    Carousel(index: $currentIndex, items: viewModel.solutions, cardPadding: 120, id: \.id) { solution,cardSize in
+                    Carousel(index: $currentIndex, items: viewModel.solutions, cardPadding: 150, id: \.id) { solution,cardSize in
                         //                        NavigationLink(destination: AddSolutionView(problemText: solution.problem, solutionText: solution.solution, stepperValue: solution.importance)){
                         ZStack {
                            
@@ -81,7 +81,7 @@ struct FeaturedView: View {
         }
         .onAppear{
             Task{
-                try await viewModel.fetchSolutions()
+                try await viewModel.fetchFeaturedSolutions()
             }
         }
     }

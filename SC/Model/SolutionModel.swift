@@ -56,12 +56,16 @@ extension SolutionModel{
             let db = Firestore.firestore()
             let solutionRef = db.collection("users").document("BqfIaUDFrmTW5otiSOA9USKgplK2").collection("solutions")
             
-            let querySnapshot = try await solutionRef.order(by: "createdAt", descending: true).whereField("importance", isGreaterThan: 5).getDocuments()
+            let querySnapshot = try await solutionRef.order(by: "createdAt", descending: true).getDocuments()
             let solutions = try querySnapshot.documents.map {
                 try $0.data(as: SolutionModel.self)
             }
             
-            return solutions
+            let filterdSolution = solutions.filter({ solution in
+                solution.importance > 5
+            })
+            
+            return filterdSolution
         }catch{
             throw error
         }
