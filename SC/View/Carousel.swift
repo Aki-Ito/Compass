@@ -82,6 +82,8 @@ struct Carousel<Content: View,Item,ID>: View where Item: RandomAccessCollection,
         //That's why created @Gesturestate to hold the current translation data
         //Converting translation to -60 ... 60
         let progress = ((translation < 0 ? translation : -translation)/cardWidth) * 60
+        print("translation: \(translation)")
+        print("progress: \(progress)")
         let yOffset = -progress < 60 ? progress : -(progress + 120)
         
         //MARK: Checking previous, next and in-between offsets
@@ -105,10 +107,12 @@ struct Carousel<Content: View,Item,ID>: View where Item: RandomAccessCollection,
     func limitScroll ()-> CGFloat{
         let extraSpace = (cardPadding/2) - spacing
         if index == 0 && offset > extraSpace{
+            print("firstOffset: \(offset)")
             return offset/4
         }else if index == items.count - 1 && translation < 0{
             return offset - (translation/2)
         }else{
+            print("offset: \(offset)")
             return offset
         }
     }
@@ -141,7 +145,6 @@ struct Carousel<Content: View,Item,ID>: View where Item: RandomAccessCollection,
             //MARK: Caluculating Rotation
             let progress = offset / cardWidth
             //Since Index Starts with zero
-            //エラーがある気がする
             rotation = (progress * 5).rounded() - 1
             print(rotation)
         }

@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct FeaturedView: View {
+    @State var searchText: String = ""
     @State var currentTab: Tab = .home
     @Namespace var animation
     
     @State var currentIndex: Int = 0
     @StateObject var viewModel = FetchSCViewModel()
+    
     
     var body: some View {
         NavigationView {
@@ -20,7 +22,7 @@ struct FeaturedView: View {
                 SCBackgroundView()
                 VStack(spacing: 15){
                     HeaderView(viewModel: viewModel)
-                    SearchBar()
+                    SearchBar(viewModel: viewModel)
                     //MARK: Custom Carousel
                     Carousel(index: $currentIndex, items: viewModel.solutions, cardPadding: 150, id: \.id) { solution,cardSize in
                         //                        NavigationLink(destination: AddSolutionView(problemText: solution.problem, solutionText: solution.solution, stepperValue: solution.importance)){
@@ -120,7 +122,7 @@ struct FeaturedView: View {
     
     //MARK: SearchBar
     @ViewBuilder
-    func SearchBar() -> some View{
+    func SearchBar(viewModel: FetchSCViewModel) -> some View{
         HStack(spacing: 15) {
             Image("Search")
                 .renderingMode(.original)
@@ -129,7 +131,13 @@ struct FeaturedView: View {
                 .frame(width: 20, height: 20)
                 .foregroundColor(.gray)
             
-            TextField("Search", text: .constant(""))
+            TextField("Search", text: $searchText,onEditingChanged: { start in
+                if !start{
+                    Task{
+                       try await viewModel.fetchExploredSolutions(text: searchText)
+                    }
+                }
+            })
                 .padding(.vertical, 10)
         }
         .padding(.horizontal)

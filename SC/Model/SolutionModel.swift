@@ -70,4 +70,24 @@ extension SolutionModel{
             throw error
         }
     }
+    
+    static func searchData(text: String) async throws -> [SolutionModel]{
+        do{
+            let db = Firestore.firestore()
+            let solutionRef = db.collection("users").document("BqfIaUDFrmTW5otiSOA9USKgplK2").collection("solutions")
+            
+            let querySnapshot = try await solutionRef.order(by: "createdAt", descending: true).getDocuments()
+            let solutions = try querySnapshot.documents.map {
+                try $0.data(as: SolutionModel.self)
+            }
+            
+            let filteredSolution = solutions.filter { solution in
+                solution.problem.contains(text) || solution.solution.contains(text)
+            }
+            
+            return filteredSolution
+        }catch{
+            throw error
+        }
+    }
 }

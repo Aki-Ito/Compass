@@ -21,6 +21,15 @@ class FetchSCViewModel: ObservableObject{
         let featuredSolutions = try await SolutionModel.fetchFeaturedSolution()
         self.solutions = featuredSolutions
     }
+    
+    @MainActor
+    func fetchExploredSolutions(text: String) async throws{
+        if text.isEmpty{
+            self.solutions = try await SolutionModel.fetchFeaturedSolution()
+        }else{
+            self.solutions = try await SolutionModel.searchData(text: text)
+        }
+    }
 }
 
 
