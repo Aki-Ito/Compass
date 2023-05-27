@@ -19,7 +19,7 @@ struct FeaturedView: View {
             ZStack{
                 SCBackgroundView()
                 VStack(spacing: 15){
-                    HeaderView()
+                    HeaderView(viewModel: viewModel)
                     SearchBar()
                     //MARK: Custom Carousel
                     Carousel(index: $currentIndex, items: viewModel.solutions, cardPadding: 150, id: \.id) { solution,cardSize in
@@ -144,11 +144,14 @@ struct FeaturedView: View {
 
 //MARK: HeaderView
 @ViewBuilder
-func HeaderView() -> some View{
-    
+func HeaderView(viewModel: FetchSCViewModel) -> some View{
     HStack {
         VStack(alignment: .leading, spacing: 6) {
-            NavigationLink(destination: SCListView()){
+            NavigationLink(destination: SCListView().onDisappear(perform: {
+                Task{
+                    try await viewModel.fetchFeaturedSolutions()
+                }
+            })){
                 (Text("Hello")
                     .fontWeight(.semibold) +
                  Text("Aki")
