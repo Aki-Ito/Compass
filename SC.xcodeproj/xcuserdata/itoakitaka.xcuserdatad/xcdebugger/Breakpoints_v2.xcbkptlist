@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
             endingLineNumber = "151"
-            landmarkName = "HeaderView(viewModel:)"
-            landmarkType = "9">
+            landmarkName = "FeaturedView"
+            landmarkType = "14">
             <Locations>
                <Location
                   uuid = "F38B484E-DD49-4937-83B4-E2CC18919BD6 - f3decd7572d6a238"
@@ -64,8 +64,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
             endingLineNumber = "153"
-            landmarkName = "HeaderView(viewModel:)"
-            landmarkType = "9">
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   uuid = "D6995191-5C05-4941-83C4-3D5F6FC1B08C - d3374c3b3501b81b"
