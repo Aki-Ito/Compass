@@ -35,6 +35,8 @@
 		2CD037E32A1D1DDA00C3B4C7 /* SolutionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD037E22A1D1DDA00C3B4C7 /* SolutionModel.swift */; };
 		2CD037E52A1DF82E00C3B4C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CD037E42A1DF82E00C3B4C7 /* GoogleService-Info.plist */; };
 		2CD037E72A1E819C00C3B4C7 /* FetchSCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD037E62A1E819C00C3B4C7 /* FetchSCViewModel.swift */; };
+		2CD54B582A2DE44900966D39 /* CompassionCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD54B572A2DE44900966D39 /* CompassionCalendarView.swift */; };
+		2CD54B5A2A2DE4D100966D39 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD54B592A2DE4D100966D39 /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		2CD037E22A1D1DDA00C3B4C7 /* SolutionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolutionModel.swift; sourceTree = "<group>"; };
 		2CD037E42A1DF82E00C3B4C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CD037E62A1E819C00C3B4C7 /* FetchSCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSCViewModel.swift; sourceTree = "<group>"; };
+		2CD54B572A2DE44900966D39 /* CompassionCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassionCalendarView.swift; sourceTree = "<group>"; };
+		2CD54B592A2DE4D100966D39 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 				2C9900992A1FD34D00CDD4BC /* EditSolutionView.swift */,
 				2C9900A62A2243D800CDD4BC /* SignInWithAppleButton.swift */,
 				2C9900A82A22448000CDD4BC /* SignInView.swift */,
+				2CD54B572A2DE44900966D39 /* CompassionCalendarView.swift */,
+				2CD54B592A2DE4D100966D39 /* CalendarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +257,8 @@
 				2CD037CD2A1B990900C3B4C7 /* SCBackgroundView.swift in Sources */,
 				2C8256792A0CC03B002C31F9 /* SCApp.swift in Sources */,
 				2C9900A52A2240EB00CDD4BC /* SignInWithAppleObject.swift in Sources */,
+				2CD54B5A2A2DE4D100966D39 /* CalendarView.swift in Sources */,
+				2CD54B582A2DE44900966D39 /* CompassionCalendarView.swift in Sources */,
 				2C99009C2A22011E00CDD4BC /* AccountViewModel.swift in Sources */,
 				2CA0EDF42A13978D00653D05 /* FeaturedModel.swift in Sources */,
 				2C99009E2A22014500CDD4BC /* AccountModel.swift in Sources */,
