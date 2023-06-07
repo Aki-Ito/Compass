@@ -8,7 +8,8 @@
 import Foundation
 import Combine
 class CalendarViewModel: ObservableObject{
-    private(set) var didSelectDateSubject: PassthroughSubject<Void, Never> = .init()
+    private(set) var didSelectDateSubject: PassthroughSubject<DateComponents, Never> = .init()
+    @Published var dateComponents: DateComponents?
         private var cancellables: Set<AnyCancellable> = []
         
         init() {
@@ -18,8 +19,8 @@ class CalendarViewModel: ObservableObject{
         private func subscribeDidSelectDate() {
             didSelectDateSubject
                 .receive(on: DispatchQueue.main)
-                .sink {
-                    print("did select")
+                .sink {dateComponents in
+                    self.dateComponents = dateComponents
                 }
                 .store(in: &cancellables)
         }

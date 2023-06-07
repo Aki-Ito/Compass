@@ -11,9 +11,9 @@ import SwiftUI
 import Combine
 
 struct CalendarView: UIViewRepresentable {
-    private let didSelectDateSubject: PassthroughSubject<Void, Never>
+    private var didSelectDateSubject: PassthroughSubject<DateComponents, Never>
     
-    init(didSelectDateSubject: PassthroughSubject<Void, Never>) {
+    init(didSelectDateSubject: PassthroughSubject<DateComponents, Never>) {
         self.didSelectDateSubject = didSelectDateSubject
     }
     
@@ -34,14 +34,15 @@ struct CalendarView: UIViewRepresentable {
     func updateUIView(_ uiView: UIViewType, context: Context) {}
     
     class Coordinator: NSObject, UICalendarSelectionSingleDateDelegate {
-        private let parent: CalendarView
+        private var parent: CalendarView
         
         init(_ parent: CalendarView) {
             self.parent = parent
         }
         
         func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
-            parent.didSelectDateSubject.send()
+            guard let dateComponents = dateComponents else {return}
+            parent.didSelectDateSubject.send(dateComponents)
         }
     }
 }
