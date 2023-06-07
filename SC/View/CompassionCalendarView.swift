@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CompassionCalendarView: View {
+    @StateObject private var viewModel: CalendarViewModel = .init()
     let viewWidth = UIScreen.main.bounds.width
     let viewHeight = UIScreen.main.bounds.height
     var body: some View {
@@ -23,8 +24,7 @@ struct CompassionCalendarView: View {
                             .padding()
                         Spacer()
                     }
-                    CalendarView()
-                        .padding()
+                    CalendarView(didSelectDateSubject: viewModel.didSelectDateSubject)
                 }
             }
             .navigationTitle("Calendar")

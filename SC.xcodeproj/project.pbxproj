@@ -11,6 +11,7 @@
 		2C82567B2A0CC03B002C31F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C82567A2A0CC03B002C31F9 /* ContentView.swift */; };
 		2C82567D2A0CC03C002C31F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C82567C2A0CC03C002C31F9 /* Assets.xcassets */; };
 		2C8256802A0CC03C002C31F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C82567F2A0CC03C002C31F9 /* Preview Assets.xcassets */; };
+		2C9048562A30B006005A9F4E /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9048552A30B006005A9F4E /* CalendarViewModel.swift */; };
 		2C99009A2A1FD34D00CDD4BC /* EditSolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9900992A1FD34D00CDD4BC /* EditSolutionView.swift */; };
 		2C99009C2A22011E00CDD4BC /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C99009B2A22011E00CDD4BC /* AccountViewModel.swift */; };
 		2C99009E2A22014500CDD4BC /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C99009D2A22014500CDD4BC /* AccountModel.swift */; };
@@ -45,6 +46,7 @@
 		2C82567A2A0CC03B002C31F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2C82567C2A0CC03C002C31F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C82567F2A0CC03C002C31F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2C9048552A30B006005A9F4E /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		2C9900992A1FD34D00CDD4BC /* EditSolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSolutionView.swift; sourceTree = "<group>"; };
 		2C99009B2A22011E00CDD4BC /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		2C99009D2A22014500CDD4BC /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				2CD037D12A1D199300C3B4C7 /* AddSCViewModel.swift */,
 				2CD037E62A1E819C00C3B4C7 /* FetchSCViewModel.swift */,
 				2C99009B2A22011E00CDD4BC /* AccountViewModel.swift */,
+				2C9048552A30B006005A9F4E /* CalendarViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				2CA0EDEE2A0FE2A400653D05 /* FeaturedView.swift in Sources */,
 				2CD037E32A1D1DDA00C3B4C7 /* SolutionModel.swift in Sources */,
 				2CD037D22A1D199300C3B4C7 /* AddSCViewModel.swift in Sources */,
+				2C9048562A30B006005A9F4E /* CalendarViewModel.swift in Sources */,
 				2CD037CF2A1BBBF300C3B4C7 /* AddSolutionView.swift in Sources */,
 				2CD037CD2A1B990900C3B4C7 /* SCBackgroundView.swift in Sources */,
 				2C8256792A0CC03B002C31F9 /* SCApp.swift in Sources */,
