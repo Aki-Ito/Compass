@@ -112,6 +112,7 @@
 				2CD037E42A1DF82E00C3B4C7 /* GoogleService-Info.plist */,
 				2C82567C2A0CC03C002C31F9 /* Assets.xcassets */,
 				2C9900A42A2240EB00CDD4BC /* SignInWithAppleObject.swift */,
+				2C9048792A31B19F005A9F4E /* Repository */,
 				2C9900982A1FD2B900CDD4BC /* View */,
 				2CD037D02A1D197400C3B4C7 /* ViewModel */,
 				2CD037CB2A19354700C3B4C7 /* Model */,
@@ -126,6 +127,13 @@
 				2C82567F2A0CC03C002C31F9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2C9048792A31B19F005A9F4E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		2C9900982A1FD2B900CDD4BC /* View */ = {

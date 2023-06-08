@@ -10,8 +10,10 @@ import Combine
 class CalendarViewModel: ObservableObject, Identifiable{
     private(set) var didSelectDateSubject: PassthroughSubject<DateComponents, Never> = .init()
     private(set) var isShowingAddView: PassthroughSubject<Bool, Never> = .init()
+    
     @Published var dateComponents: DateComponents?
     @Published var isShowing: Bool = false
+    
     private var cancellables: Set<AnyCancellable> = []
     
     init() {
