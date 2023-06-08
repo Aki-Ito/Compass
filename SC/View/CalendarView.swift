@@ -12,9 +12,11 @@ import Combine
 
 struct CalendarView: UIViewRepresentable {
     private var didSelectDateSubject: PassthroughSubject<DateComponents, Never>
+    private var judgeShowingAddViewSubject: PassthroughSubject<Bool, Never>
     
-    init(didSelectDateSubject: PassthroughSubject<DateComponents, Never>) {
+    init(didSelectDateSubject: PassthroughSubject<DateComponents, Never>, judgeShowingAddViewSubject: PassthroughSubject<Bool, Never>) {
         self.didSelectDateSubject = didSelectDateSubject
+        self.judgeShowingAddViewSubject = judgeShowingAddViewSubject
     }
     
     func makeCoordinator() -> Coordinator {
@@ -22,6 +24,7 @@ struct CalendarView: UIViewRepresentable {
     }
     
     var dateComponent: DateComponents?
+    
     func makeUIView(context: Context) -> some UIView {
         let calendarView = UICalendarView()
         calendarView.calendar = Calendar(identifier: .gregorian)
@@ -42,6 +45,8 @@ struct CalendarView: UIViewRepresentable {
         
         func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
             guard let dateComponents = dateComponents else {return}
+            parent.judgeShowingAddViewSubject.send(true)
+            //MARK: Published data
             parent.didSelectDateSubject.send(dateComponents)
         }
     }

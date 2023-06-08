@@ -9,8 +9,8 @@ import SwiftUI
 
 struct CompassionCalendarView: View {
     @StateObject private var viewModel: CalendarViewModel = .init()
-    let viewWidth = UIScreen.main.bounds.width
-    let viewHeight = UIScreen.main.bounds.height
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
     var body: some View {
         NavigationStack{
             ZStack {
@@ -24,10 +24,14 @@ struct CompassionCalendarView: View {
                             .padding()
                         Spacer()
                     }
-                    CalendarView(didSelectDateSubject: viewModel.didSelectDateSubject)
+                    CalendarView(didSelectDateSubject: viewModel.didSelectDateSubject, judgeShowingAddViewSubject: viewModel.isShowingAddView)
                 }
             }
             .navigationTitle("Calendar")
+            .sheet(isPresented: $viewModel.isShowing) {
+                AddCompassionView()
+                    .presentationDetents([.height(screenHeight*0.9)])
+            }
         }
     }
 }

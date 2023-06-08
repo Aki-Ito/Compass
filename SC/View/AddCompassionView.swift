@@ -10,7 +10,7 @@ import SwiftUI
 struct AddCompassionView: View {
     @ObservedObject var calendarViewModel = CalendarViewModel()
     var body: some View {
-        Text("\(calendarViewModel.dateComponents!)")
+        Text("")
     }
 }
 
