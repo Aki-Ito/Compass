@@ -37,4 +37,18 @@ class CalendarViewModel: ObservableObject, Identifiable{
             }
             .store(in: &cancellables)
     }
+    
+    func addDiary(selfkindness: String, commonHumanity: String, mindfullness: String) async throws {
+        let data = CalendarModel(selfkindness: selfkindness, commonHumanity: commonHumanity, mindfullness: mindfullness)
+        try await CalendarModel.addData(data: data)
+    }
+    
+    func fetchDiary(createdAt: DateComponents) async throws -> [CalendarModel]{
+        do{
+            guard let data = try await CalendarModel.fetchData(createdAt: createdAt) else {return []}
+            return data
+        }catch{
+            throw error
+        }
+    }
 }

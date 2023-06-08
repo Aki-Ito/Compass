@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct AddCompassionView: View {
-    @ObservedObject var calendarViewModel = CalendarViewModel()
+    @ObservedObject var calendarViewModel: CalendarViewModel = .init()
     @State var selfkindness: String = ""
     @State var commonHumanity: String = ""
     @State var mindfullness: String = ""
+    let dateComponents: DateComponents
     
     var body: some View {
         NavigationStack{
@@ -20,10 +21,19 @@ struct AddCompassionView: View {
                 .toolbar {
                     ToolbarItem {
                         Button("save") {
-                            print("Save")
+                            Task{
+                                try await calendarViewModel.addDiary(selfkindness:selfkindness,commonHumanity:commonHumanity,mindfullness:mindfullness)
+                            }
                         }
                     }
                 }
+        }.onAppear{
+            Task{
+                        let data = try await calendarViewModel.fetchDiary(createdAt: dateComponents)
+                        self.selfkindness = data.first?.selfkindness ?? ""
+                        self.commonHumanity = data.first?.commonHumanity ?? ""
+                        self.mindfullness = data.first?.mindfullness ?? ""
+            }
         }
     }
     
@@ -83,6 +93,6 @@ struct AddCompassionView: View {
 
 struct AddCompassionView_Previews: PreviewProvider {
     static var previews: some View {
-        AddCompassionView()
+        AddCompassionView( dateComponents:  DateComponents(year: 2022, month: 7, day: 1, hour: 10, minute: 30))
     }
 }

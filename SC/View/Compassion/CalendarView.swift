@@ -37,6 +37,7 @@ struct CalendarView: UIViewRepresentable {
     func updateUIView(_ uiView: UIViewType, context: Context) {}
     
     class Coordinator: NSObject, UICalendarSelectionSingleDateDelegate {
+        @ObservedObject var viewModel: CalendarViewModel = .init()
         private var parent: CalendarView
         
         init(_ parent: CalendarView) {
@@ -45,9 +46,10 @@ struct CalendarView: UIViewRepresentable {
         
         func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
             guard let dateComponents = dateComponents else {return}
-            parent.judgeShowingAddViewSubject.send(true)
             //MARK: Published data
             parent.didSelectDateSubject.send(dateComponents)
+            viewModel.dateComponents = dateComponents
+            parent.judgeShowingAddViewSubject.send(true)
         }
     }
 }
