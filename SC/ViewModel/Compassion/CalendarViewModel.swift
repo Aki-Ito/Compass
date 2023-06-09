@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import FirebaseFirestore
 class CalendarViewModel: ObservableObject, Identifiable{
     private(set) var didSelectDateSubject: PassthroughSubject<DateComponents, Never> = .init()
     private(set) var isShowingAddView: PassthroughSubject<Bool, Never> = .init()
@@ -38,14 +39,14 @@ class CalendarViewModel: ObservableObject, Identifiable{
             .store(in: &cancellables)
     }
     
-    func addDiary(selfkindness: String, commonHumanity: String, mindfullness: String) async throws {
-        let data = CalendarModel(selfkindness: selfkindness, commonHumanity: commonHumanity, mindfullness: mindfullness)
-        try await CalendarModel.addData(data: data)
+    func addDiary(selfkindness: String, commonHumanity: String, mindfullness: String, date: Date) async throws {
+        
+        try await CalendarModel.addData(selfkindness: selfkindness, commonHumanity: commonHumanity, mindfullness: mindfullness, createdAt: Timestamp(date: date))
     }
     
-    func fetchDiary(createdAt: DateComponents) async throws -> [CalendarModel]{
+    func fetchDiary(createdAt: DateComponents) async throws -> CalendarModel?{
         do{
-            guard let data = try await CalendarModel.fetchData(createdAt: createdAt) else {return []}
+            guard let data = try await CalendarModel.fetchData(createdAt: createdAt) else {return nil}
             return data
         }catch{
             throw error

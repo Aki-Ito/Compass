@@ -19,29 +19,36 @@ public struct CalendarModel: Codable,Identifiable{
 }
 
 extension CalendarModel{
-    static func addData(data: CalendarModel) async throws{
+    static let dateFormat = DateFormatRepository.shared
+    
+    static func addData(selfkindness: String, commonHumanity:String, mindfullness: String,createdAt: Timestamp) async throws{
         do{
             let db = Firestore.firestore()
             guard let uid = Auth.auth().currentUser?.uid else {return}
-            let compassionRef = db.collection("users").document(uid).collection("diaries")
-            try compassionRef.addDocument(from: data)
+            let formatDate = dateFormat.dateFormat(date: createdAt.dateValue())
+            let compassionRef = db.collection("users").document(uid).collection("diaries").document(formatDate)
+            let data = [
+                "selfkindness": selfkindness,
+                "commonHumanity": commonHumanity,
+                "mindfullness": mindfullness,
+                "createdAt": createdAt
+            ] as [String : Any]
+            try await compassionRef.setData(data, merge: true)
         }catch{
             throw error
         }
     }
     
-    static func fetchData(createdAt: DateComponents) async throws -> [CalendarModel]?{
+    static func fetchData(createdAt: DateComponents) async throws -> CalendarModel?{
         do{
             let db = Firestore.firestore()
             guard let uid = Auth.auth().currentUser?.uid else {return nil}
             guard let createdAt = createdAt.date else {return nil}
-            let compassionRef = db.collection("users").document(uid).collection("diaries")
+            let compassionRef = db.collection("users").document(uid).collection("diaries").document(dateFormat.dateFormat(date: createdAt))
             
-            let fetchedData = try await compassionRef.whereField("createdAt", isEqualTo: Timestamp(date: createdAt)).getDocuments()
-            let mappedData = try fetchedData.documents.map{
-                try $0.data(as: CalendarModel.self)
-            }
+            let fetchedData = try await compassionRef.getDocument()
             
+            let mappedData = try fetchedData.data(as: CalendarModel.self)
             return mappedData
         }catch{
             throw error

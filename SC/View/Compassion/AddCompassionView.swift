@@ -22,17 +22,18 @@ struct AddCompassionView: View {
                     ToolbarItem {
                         Button("save") {
                             Task{
-                                try await calendarViewModel.addDiary(selfkindness:selfkindness,commonHumanity:commonHumanity,mindfullness:mindfullness)
+                                try await calendarViewModel.addDiary(selfkindness:selfkindness,commonHumanity:commonHumanity,mindfullness:mindfullness,date: dateComponents.date! )
+                                
                             }
                         }
                     }
                 }
         }.onAppear{
             Task{
-                        let data = try await calendarViewModel.fetchDiary(createdAt: dateComponents)
-                        self.selfkindness = data.first?.selfkindness ?? ""
-                        self.commonHumanity = data.first?.commonHumanity ?? ""
-                        self.mindfullness = data.first?.mindfullness ?? ""
+                let data = try await calendarViewModel.fetchDiary(createdAt: dateComponents)
+                self.selfkindness = data?.selfkindness ?? ""
+                self.commonHumanity = data?.commonHumanity ?? ""
+                self.mindfullness = data?.mindfullness ?? ""
             }
         }
     }
