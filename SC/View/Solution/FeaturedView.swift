@@ -74,8 +74,6 @@ struct FeaturedView: View {
                         .padding(.horizontal,-15)
                         .padding(.vertical)
                     }
-                    
-                    TabBar()
                 }
                 .padding([.horizontal, .top],15)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
