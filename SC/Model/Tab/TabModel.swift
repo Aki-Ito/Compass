@@ -7,8 +7,6 @@
 
 import Foundation
 enum Tab: String,CaseIterable{
-    case home = "Home"
-    case explore = "Explore"
-    case heart = "Heart"
-    case profile = "Profile"
+    case solution = "square.and.pencil"
+    case compassion = "book"
 }

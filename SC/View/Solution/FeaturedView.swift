@@ -9,7 +9,6 @@ import SwiftUI
 
 struct FeaturedView: View {
     @State var searchText: String = ""
-    @State var currentTab: Tab = .home
     @Namespace var animation
     
     @State var currentIndex: Int = 0
@@ -17,7 +16,7 @@ struct FeaturedView: View {
     
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack{
                 SCBackgroundView()
                 VStack(spacing: 15){
@@ -25,10 +24,7 @@ struct FeaturedView: View {
                     SearchBar(viewModel: viewModel)
                     //MARK: Custom Carousel
                     Carousel(index: $currentIndex, items: viewModel.solutions, cardPadding: 150, id: \.id) { solution,cardSize in
-                        //                        NavigationLink(destination: AddSolutionView(problemText: solution.problem, solutionText: solution.solution, stepperValue: solution.importance)){
                         ZStack {
-                           
-                            
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(.white)
                                 .frame(width: cardSize.width, height: cardSize.height)
@@ -84,38 +80,6 @@ struct FeaturedView: View {
                 try await viewModel.fetchFeaturedSolutions()
             }
         }
-    }
-    
-    //MARK: TabBar
-    @ViewBuilder
-    func TabBar() -> some View{
-        HStack(spacing: 0){
-            ForEach(Tab.allCases, id: \.rawValue){tab in
-                VStack(spacing: -2) {
-                    Image(tab.rawValue)
-                        .renderingMode(.template)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 28,height: 28)
-                        .foregroundColor(currentTab == tab ? .white : .gray.opacity(0.6))
-                    
-                    if currentTab == tab{
-                        Circle()
-                            .fill(.white)
-                            .frame(width: 5, height: 6)
-                            .offset(y: 10)
-                            .matchedGeometryEffect(id: "TAB", in: animation)
-                    }
-                }
-                .frame(maxWidth: .infinity)
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    withAnimation(.easeInOut){currentTab = tab}
-                }
-            }
-        }
-        .padding(.horizontal)
-        .padding(.bottom, 10)
     }
     
     //MARK: SearchBar
