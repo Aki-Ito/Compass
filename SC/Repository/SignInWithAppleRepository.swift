@@ -9,8 +9,10 @@ import Foundation
 import AuthenticationServices
 import CryptoKit
 import FirebaseAuth
+import FirebaseFirestore
 
-public class SignInWithAppleObject: NSObject {
+public class SignInWithAppleRepository: NSObject, ObservableObject{
+    @Published var isShow: Bool = false
     private var currentNonce: String?
     public func signInWithApple() {
         let request = ASAuthorizationAppleIDProvider().createRequest()
@@ -69,7 +71,7 @@ public class SignInWithAppleObject: NSObject {
 
 }
 
-extension SignInWithAppleObject: ASAuthorizationControllerDelegate {
+extension SignInWithAppleRepository: ASAuthorizationControllerDelegate {
 
     public func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         // Sign in With Firebase app
@@ -95,6 +97,14 @@ extension SignInWithAppleObject: ASAuthorizationControllerDelegate {
                     print(error!.localizedDescription)
                     return
                 }
+                guard let uid = result?.user.uid else {return}
+                let accountRef = Firestore.firestore().collection("users").document(uid)
+                let data = [
+                    "userName": "guest",
+                    "userUid": uid
+                ]
+                accountRef.setData(data)
+                self.isShow = true
             }
         }
     }

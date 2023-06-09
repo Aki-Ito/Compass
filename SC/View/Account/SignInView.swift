@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignInView: View {
-     @State private var signInWithAppleObject = SignInWithAppleObject()
+     @ObservedObject private var signInWithAppleObject = SignInWithAppleRepository()
 
      var body: some View {
          ZStack {
@@ -22,6 +22,9 @@ struct SignInView: View {
                          .frame(height: 50)
                          .cornerRadius(16)
                  })
+                 .fullScreenCover(isPresented: $signInWithAppleObject.isShow) {
+                     TabBarView()
+                 }
                  .padding(EdgeInsets(top: 20, leading: 40, bottom: 60, trailing: 40))
              }
          }

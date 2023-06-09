@@ -13,8 +13,8 @@ import FirebaseStorage
 
 class Account: Codable,Identifiable{
     @DocumentID public var id: String?
-    let userName: String
-    let userUid: String
+    var userName: String
+    var userUid: String
 }
 
 extension Account{
