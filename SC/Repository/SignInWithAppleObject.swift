@@ -12,7 +12,6 @@ import FirebaseAuth
 
 public class SignInWithAppleObject: NSObject {
     private var currentNonce: String?
-
     public func signInWithApple() {
         let request = ASAuthorizationAppleIDProvider().createRequest()
         request.requestedScopes = [.email, .fullName]
