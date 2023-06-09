@@ -19,13 +19,13 @@ public struct CalendarModel: Codable,Identifiable{
 }
 
 extension CalendarModel{
-    static let dateFormat = DateFormatRepository.shared
+    static let repository = DateFormatRepository.shared
     
     static func addData(selfkindness: String, commonHumanity:String, mindfullness: String,createdAt: Timestamp) async throws{
         do{
             let db = Firestore.firestore()
             guard let uid = Auth.auth().currentUser?.uid else {return}
-            let formatDate = dateFormat.dateFormat(date: createdAt.dateValue())
+            let formatDate = repository.dateFormat(date: createdAt.dateValue())
             let compassionRef = db.collection("users").document(uid).collection("diaries").document(formatDate)
             let data = [
                 "selfkindness": selfkindness,
@@ -44,7 +44,7 @@ extension CalendarModel{
             let db = Firestore.firestore()
             guard let uid = Auth.auth().currentUser?.uid else {return nil}
             guard let createdAt = createdAt.date else {return nil}
-            let compassionRef = db.collection("users").document(uid).collection("diaries").document(dateFormat.dateFormat(date: createdAt))
+            let compassionRef = db.collection("users").document(uid).collection("diaries").document(repository.dateFormat(date: createdAt))
             
             let fetchedData = try await compassionRef.getDocument()
             
