@@ -96,7 +96,7 @@ extension Account{
             )
             try await user.reauthenticate(with: credential)
             //MARK: delete user
-            
+            try await user.delete()
         }catch{
             throw error
         }
