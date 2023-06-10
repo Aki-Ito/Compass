@@ -38,7 +38,7 @@ struct EditSolutionView: View {
                             .foregroundColor(Color("CirclePink1"))
                     }
                     .alert(isPresented: $showingDeleteAlert) {
-                        Alert(title: Text("delete?"),dismissButton: .destructive(Text("OK"),action: {
+                        Alert(title: Text("delete?"),primaryButton:.cancel(Text("cancel")),secondaryButton: .destructive(Text("OK"),action: {
                             //MARK: access viewModel
                             Task{
                                 do{
