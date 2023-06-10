@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct AddCompassionView: View {
+    @ObservedObject var keyboard = KeyboardObserver()
     @ObservedObject var calendarViewModel: CalendarViewModel = .init()
     @State var selfkindness: String = ""
     @State var commonHumanity: String = ""
     @State var mindfullness: String = ""
+    @State private var showingAlert = false
+    @FocusState var focus: Bool
     let dateComponents: DateComponents
     
     var body: some View {
@@ -21,10 +24,15 @@ struct AddCompassionView: View {
                 .toolbar {
                     ToolbarItem {
                         Button("save") {
-                            Task{
-                                try await calendarViewModel.addDiary(selfkindness:selfkindness,commonHumanity:commonHumanity,mindfullness:mindfullness,date: dateComponents.date! )
-                                
-                            }
+                            self.showingAlert = true
+                        }
+                        .alert(isPresented: $showingAlert) {
+                            Alert(title: Text("Save?"),dismissButton: .default(Text("OK"),action: {
+                                Task{
+                                    try await calendarViewModel.addDiary(selfkindness:selfkindness,commonHumanity:commonHumanity,mindfullness:mindfullness,date: dateComponents.date! )
+                                    
+                                }
+                            }))
                         }
                     }
                 }
@@ -53,6 +61,18 @@ struct AddCompassionView: View {
                 .background(RoundedRectangle(cornerRadius: 10).stroke(
                     Color("CirclePink1")
                 ))
+                .focused(self.$focus)
+                .toolbar{
+                    ToolbarItem(placement: .keyboard){
+                        HStack{
+                            Spacer()
+                            Button("Close"){
+                                self.focus = false
+                            }
+                            .foregroundColor(Color("CirclePink1"))
+                        }
+                    }
+                }
             
             HStack{
                 Text("commonHumanity")
@@ -67,6 +87,18 @@ struct AddCompassionView: View {
                 .background(RoundedRectangle(cornerRadius: 10).stroke(
                     Color("CirclePink1")
                 ))
+                .focused(self.$focus)
+                .toolbar{
+                    ToolbarItem(placement: .keyboard){
+                        HStack{
+                            Spacer()
+                            Button("Close"){
+                                self.focus = false
+                            }
+                            .foregroundColor(Color("CirclePink1"))
+                        }
+                    }
+                }
             
             HStack{
                 Text("mindfullness")
@@ -81,6 +113,18 @@ struct AddCompassionView: View {
                 .background(RoundedRectangle(cornerRadius: 10).stroke(
                     Color("CirclePink1")
                 ))
+                .focused(self.$focus)
+                .toolbar{
+                    ToolbarItem(placement: .keyboard){
+                        HStack{
+                            Spacer()
+                            Button("Close"){
+                                self.focus = false
+                            }
+                            .foregroundColor(Color("CirclePink1"))
+                        }
+                    }
+                }
         }.padding()
     }
 }

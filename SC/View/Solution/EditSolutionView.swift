@@ -13,9 +13,11 @@ struct EditSolutionView: View {
     var addSCViewModel = AddSCViewModel()
     var fetchSCViewModel = FetchSCViewModel()
     let screenSizeWidth = UIScreen.main.bounds.width
+    @State private var showingAlert = false
     @State var problemText: String
     @State var solutionText: String
     @State var stepperValue: Int
+    let id: String
     
     var body: some View {
             ZStack{
@@ -29,19 +31,21 @@ struct EditSolutionView: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button("save") {
-                            //MARK: access viewModel
-                            Task{
-                                do{
-                                   try await addSCViewModel.addSolution(problem:problemText,
-                                                                solution:solutionText,
-                                                                createAt:Date(),
-                                                                importance:stepperValue)
-                                }catch{
-                                    throw error
-                                }
-                            }
+                            self.showingAlert = true
                         }
                         .foregroundColor(Color("CirclePink1"))
+                        .alert(isPresented: $showingAlert) {
+                            Alert(title: Text("Save?"),dismissButton: .default(Text("OK"),action: {
+                                //MARK: access viewModel
+                                Task{
+                                    do{
+                                        try await addSCViewModel.editSolution(problem: problemText, solution: solutionText, importance: stepperValue, id: id)
+                                    }catch{
+                                        throw error
+                                    }
+                                }
+                            }))
+                        }
                     }
                 }
             }
@@ -101,6 +105,6 @@ struct EditSolutionView: View {
 
 struct EditSolutionView_Previews: PreviewProvider {
     static var previews: some View {
-        EditSolutionView(problemText: "preview", solutionText: "preview", stepperValue: 3)
+        EditSolutionView(problemText: "preview", solutionText: "preview", stepperValue: 3, id: "vvv")
     }
 }

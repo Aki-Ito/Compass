@@ -19,4 +19,8 @@ class AddSCViewModel: ObservableObject{
         try await SolutionModel.addSolution(solution: contents)
     }
     
+    func editSolution(problem: String, solution: String, importance: Int, id: String) async throws{
+        try await SolutionModel.editSolution(id: id, problem: problem, solution: solution, importance: importance)
+    }
+    
 }

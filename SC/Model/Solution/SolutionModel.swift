@@ -35,6 +35,26 @@ extension SolutionModel{
         }
     }
     
+    static func editSolution(id: String, problem: String, solution: String, importance: Int) async throws{
+        do{
+            let user = Auth.auth().currentUser
+            let db = Firestore.firestore()
+            guard let user = user else {
+                return
+            }
+            //MARK: use test account
+            let solutionRef = db.collection("users").document(user.uid).collection("solutions").document(id)
+            let data = [
+                "problem":problem,
+                "solution":solution,
+                "importance":importance
+            ] as [String : Any]
+            try await solutionRef.setData(data, merge: true)
+        }catch{
+            throw error
+        }
+    }
+    
     static func fetchSolution() async throws -> [SolutionModel]{
         do{
             let db = Firestore.firestore()

@@ -51,7 +51,7 @@ struct SCListView: View {
                         ForEach(viewModel.solutions) { solution in
                             ZStack {
                                 //MARK: backGroundView
-                                listBackgroundView(problem: solution.problem, solution: solution.solution, stepperValue: solution.importance)
+                                listBackgroundView(problem: solution.problem, solution: solution.solution, stepperValue: solution.importance, id: solution.id!)
                                 HStack{
                                     VStack(alignment: .leading){
                                         Text(solution.problem)
@@ -99,8 +99,8 @@ struct SCListView: View {
     }
     
     @ViewBuilder
-    func listBackgroundView(problem: String, solution: String, stepperValue: Int) -> some View {
-        NavigationLink(destination: EditSolutionView(problemText: problem, solutionText: solution, stepperValue: stepperValue)){
+    func listBackgroundView(problem: String, solution: String, stepperValue: Int, id: String) -> some View {
+        NavigationLink(destination: EditSolutionView(problemText: problem, solutionText: solution, stepperValue: stepperValue, id: id)){
             RoundedRectangle(cornerRadius: 25)
                 .fill(.white)
                 .frame(height: 100)
