@@ -42,7 +42,6 @@ extension SolutionModel{
             guard let user = user else {
                 return
             }
-            //MARK: use test account
             let solutionRef = db.collection("users").document(user.uid).collection("solutions").document(id)
             let data = [
                 "problem":problem,
@@ -53,6 +52,17 @@ extension SolutionModel{
         }catch{
             throw error
         }
+    }
+    
+    static func deleteSolution(id: String) async throws{
+        let user = Auth.auth().currentUser
+        let db = Firestore.firestore()
+        guard let user = user else {
+            return
+        }
+        //MARK: delete account
+        let solutionRef = db.collection("users").document(user.uid).collection("solutions").document(id)
+        try await solutionRef.delete()
     }
     
     static func fetchSolution() async throws -> [SolutionModel]{

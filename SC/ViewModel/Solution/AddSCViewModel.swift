@@ -23,4 +23,7 @@ class AddSCViewModel: ObservableObject{
         try await SolutionModel.editSolution(id: id, problem: problem, solution: solution, importance: importance)
     }
     
+    func deleteSolution(id: String) async throws{
+        try await SolutionModel.deleteSolution(id: id)
+    }
 }

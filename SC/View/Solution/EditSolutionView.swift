@@ -14,41 +14,65 @@ struct EditSolutionView: View {
     var fetchSCViewModel = FetchSCViewModel()
     let screenSizeWidth = UIScreen.main.bounds.width
     @State private var showingAlert = false
+    @State private var showingDeleteAlert = false
     @State var problemText: String
     @State var solutionText: String
     @State var stepperValue: Int
     let id: String
     
     var body: some View {
-            ZStack{
-                Color("BG2")
-                    .ignoresSafeArea()
-                VStack{
-                    problemView()
-                    attachmentView()
-                    Spacer()
-                }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("save") {
-                            self.showingAlert = true
-                        }
-                        .foregroundColor(Color("CirclePink1"))
-                        .alert(isPresented: $showingAlert) {
-                            Alert(title: Text("Save?"),dismissButton: .default(Text("OK"),action: {
-                                //MARK: access viewModel
-                                Task{
-                                    do{
-                                        try await addSCViewModel.editSolution(problem: problemText, solution: solutionText, importance: stepperValue, id: id)
-                                    }catch{
-                                        throw error
-                                    }
+        ZStack{
+            Color("BG2")
+                .ignoresSafeArea()
+            VStack{
+                problemView()
+                attachmentView()
+                Spacer()
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing){
+                    Button(action: {
+                        self.showingDeleteAlert = true
+                    }) {
+                        Image(systemName: "trash")
+                            .foregroundColor(Color("CirclePink1"))
+                    }
+                    .alert(isPresented: $showingDeleteAlert) {
+                        Alert(title: Text("delete?"),dismissButton: .destructive(Text("OK"),action: {
+                            //MARK: access viewModel
+                            Task{
+                                do{
+                                    try await SolutionModel.deleteSolution(id: id)
+                                }catch{
+                                    throw error
                                 }
-                            }))
-                        }
+                            }
+                            
+                        }))
+                    }
+                    
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button("save") {
+                        self.showingAlert = true
+                    }
+                    .foregroundColor(Color("CirclePink1"))
+                    .alert(isPresented: $showingAlert) {
+                        Alert(title: Text("Save?"),dismissButton: .default(Text("OK"),action: {
+                            //MARK: access viewModel
+                            Task{
+                                do{
+                                    try await addSCViewModel.editSolution(problem: problemText, solution: solutionText, importance: stepperValue, id: id)
+                                }catch{
+                                    throw error
+                                }
+                            }
+                        }))
                     }
                 }
             }
+        }
     }
     
     @ViewBuilder
