@@ -11,9 +11,6 @@ struct FeaturedView: View {
     @State var searchText: String = ""
     @Namespace var animation
     @State var currentIndex: Int = 0
-    
-    @State var data: Data? = nil
-    @State var userInfo: Account? = nil
     @StateObject var solutionViewModel = FetchSCViewModel()
     @StateObject var accountViewModel = AccountViewModel()
     
@@ -82,8 +79,8 @@ struct FeaturedView: View {
         .onAppear{
             Task{
                 try await solutionViewModel.fetchFeaturedSolutions()
-                data =  try await accountViewModel.fetchImage()
-                userInfo = try await accountViewModel.fetchUserInfo()
+                try await accountViewModel.fetchUserInfo()
+                try await accountViewModel.fetchImage()
             }
         }
     }
@@ -129,7 +126,7 @@ struct FeaturedView: View {
                 })){
                     (Text("Hello")
                         .fontWeight(.semibold) +
-                     Text("\(userInfo?.userName ?? "")")
+                     Text(" \(accountViewModel.account?.userName ?? "")")
                     ).font(.title2)
                     
                     Text("see featured solution")
@@ -141,8 +138,8 @@ struct FeaturedView: View {
             Button {
                 print("")
             } label: {
-                if data != nil{
-                    Image(uiImage: UIImage(data: data!)!)
+                if accountViewModel.image != nil{
+                    Image(uiImage: UIImage(data: accountViewModel.image!)!)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 50, height: 50)

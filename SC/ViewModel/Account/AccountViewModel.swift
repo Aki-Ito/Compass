@@ -7,13 +7,18 @@
 
 import Foundation
 class AccountViewModel: ObservableObject{
-    func fetchUserInfo() async throws -> Account?{
+    @Published var account: Account?
+    @Published var image: Data?
+    
+    @MainActor
+    func fetchUserInfo() async throws{
         let data = try await Account.fetchUser()
-        return data ?? nil
+        self.account = data
     }
     
-    func fetchImage() async throws -> Data?{
+    @MainActor
+    func fetchImage() async throws{
         let image = try await Account.fetchImage()
-        return image ?? nil
+        self.image = image
     }
 }

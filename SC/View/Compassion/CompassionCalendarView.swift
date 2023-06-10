@@ -21,7 +21,7 @@ struct CompassionCalendarView: View {
                         Text("select date and do self compassion")
                             .frame(alignment: .leading)
                             .foregroundColor(.gray)
-                            .padding()
+                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 0))
                         Spacer()
                     }
                     CalendarView(didSelectDateSubject: viewModel.didSelectDateSubject, judgeShowingAddViewSubject: viewModel.isShowingAddView)

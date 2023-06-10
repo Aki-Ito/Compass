@@ -44,8 +44,6 @@ struct AddCompassionView: View {
             HStack{
                 Text("Selfkindness")
                     .font(.title2)
-                Text("write kind words to yourself")
-                    .foregroundColor(.gray)
                 Spacer()
             }
             TextEditor(text: $selfkindness)
@@ -58,10 +56,7 @@ struct AddCompassionView: View {
             
             HStack{
                 Text("commonHumanity")
-                    .font(.title2)
-                Text("View suffering as common to all human beings")
-                    .foregroundColor(.gray)
-                    .padding(.top)
+                    .font(.title3)
                 Spacer()
             }
             
@@ -76,8 +71,6 @@ struct AddCompassionView: View {
             HStack{
                 Text("mindfullness")
                     .font(.title2)
-                Text("Observe negative emotions")
-                    .foregroundColor(.gray)
                 Spacer()
             }
             
