@@ -17,7 +17,7 @@ struct AddCompassionView: View {
     var body: some View {
         NavigationStack{
             CompassionView()
-                .navigationTitle("Add Compassion")
+                .padding()
                 .toolbar {
                     ToolbarItem {
                         Button("save") {

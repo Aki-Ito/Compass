@@ -10,25 +10,35 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 import FirebaseStorage
+import AuthenticationServices
 
 class Account: Codable,Identifiable{
     @DocumentID public var id: String?
     var userName: String
     var userUid: String
+    var appleIDToken: String
+    var nonce: String
 }
 
 extension Account{
-    static func saveUser(account: Account) async throws{
+    static func saveUser(userName:String, userUid: String, appleIDToken: String,nonce: String) async throws{
         do{
             let db = Firestore.firestore()
-            let accountRef = db.collection("users")
-            try accountRef.addDocument(from: account)
+            guard let uid = Auth.auth().currentUser?.uid else {return}
+            let accountRef = db.collection("users").document(uid)
+            let data = [
+                "userName": userName,
+                "userUid": userUid,
+                "appleIDToken": appleIDToken,
+                "nonce": nonce
+            ] as [String : Any]
+            try await accountRef.setData(data, merge: true)
         }catch{
             throw error
         }
     }
     
-    static func updateUser(data: Data) async throws{
+    static func uploadImage(data: Data) async throws{
         do{
             let user = Auth.auth().currentUser
             let storage = Storage.storage().reference(forURL: "gs://selfcompass-de543.appspot.com")
@@ -41,21 +51,30 @@ extension Account{
         }
     }
     
-    static func fetchUser() async throws{
+    static func fetchUser() async throws -> Account?{
         do{
             let db = Firestore.firestore()
             let user = Auth.auth().currentUser
-            let storage = Storage.storage().reference(forURL: "gs://selfcompass-de543.appspot.com")
-            
             //MARK: fetch from firestore
-            guard let uid = user?.uid else {return}
+            guard let uid = user?.uid else {return nil}
             let accountRef = db.collection("users").document(uid)
             let documentSnapshot = try await accountRef.getDocument()
             let account = try documentSnapshot.data(as: Account.self)
-            
+            return account
+        }catch{
+            throw error
+        }
+    }
+    
+    static func fetchImage() async throws -> Data?{
+        do{
+            let storage = Storage.storage().reference(forURL: "gs://selfcompass-de543.appspot.com")
             //MARK: fetch from Storage
+            let user = Auth.auth().currentUser
+            guard let uid = user?.uid else {return nil}
             let userRef = storage.child("users").child(uid)
             let imageData = try await userRef.data(maxSize: 100)
+            return imageData
         }catch{
             throw error
         }
@@ -63,18 +82,32 @@ extension Account{
     
     static func deleteUser(password: String) async throws{
         do{
-            let db = Firestore.firestore()
             let user = Auth.auth().currentUser
             guard let user = user else {return}
-            guard let email = user.email else {return}
-            let password = password
+            let db = Firestore.firestore()
+            let accountRef = db.collection("users").document(user.uid)
+            let account = try await accountRef.getDocument()
+            let convertedAccount = try account.data(as: Account.self)
             //MARK: reauthenticate
-            var credential : AuthCredential = EmailAuthProvider.credential(withEmail: email, password: password)
+            let credential = OAuthProvider.credential(
+              withProviderID: "apple.com",
+              idToken: convertedAccount.appleIDToken,
+              rawNonce: convertedAccount.nonce
+            )
             try await user.reauthenticate(with: credential)
             //MARK: delete user
-            try await user.delete()
+            
         }catch{
             throw error
+        }
+    }
+    
+    static func logoutUser() async throws{
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
         }
     }
 }

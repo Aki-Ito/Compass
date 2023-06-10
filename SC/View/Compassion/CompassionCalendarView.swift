@@ -30,7 +30,7 @@ struct CompassionCalendarView: View {
             .navigationTitle("Calendar")
             .sheet(isPresented: $viewModel.isShowing) {
                 AddCompassionView(dateComponents: viewModel.dateComponents!)
-                    .presentationDetents([.height(screenHeight*0.9)])
+                    .presentationDetents([.height(screenHeight*0.8)])
             }
         }
     }

@@ -10,9 +10,13 @@ import SwiftUI
 struct FeaturedView: View {
     @State var searchText: String = ""
     @Namespace var animation
-    
     @State var currentIndex: Int = 0
-    @StateObject var viewModel = FetchSCViewModel()
+    
+    @State var data: Data? = nil
+    @State var userInfo: Account? = nil
+    @StateObject var solutionViewModel = FetchSCViewModel()
+    @StateObject var accountViewModel = AccountViewModel()
+    
     
     
     var body: some View {
@@ -20,10 +24,10 @@ struct FeaturedView: View {
             ZStack{
                 SCBackgroundView()
                 VStack(spacing: 15){
-                    HeaderView(viewModel: viewModel)
-                    SearchBar(viewModel: viewModel)
+                    HeaderView(viewModel: solutionViewModel)
+                    SearchBar(viewModel: solutionViewModel)
                     //MARK: Custom Carousel
-                    Carousel(index: $currentIndex, items: viewModel.solutions, cardPadding: 150, id: \.id) { solution,cardSize in
+                    Carousel(index: $currentIndex, items: solutionViewModel.solutions, cardPadding: 150, id: \.id) { solution,cardSize in
                         ZStack {
                             RoundedRectangle(cornerRadius: 20)
                                 .fill(.white)
@@ -77,7 +81,9 @@ struct FeaturedView: View {
         }
         .onAppear{
             Task{
-                try await viewModel.fetchFeaturedSolutions()
+                try await solutionViewModel.fetchFeaturedSolutions()
+                data =  try await accountViewModel.fetchImage()
+                userInfo = try await accountViewModel.fetchUserInfo()
             }
         }
     }
@@ -96,11 +102,11 @@ struct FeaturedView: View {
             TextField("Search", text: $searchText,onEditingChanged: { start in
                 if !start{
                     Task{
-                       try await viewModel.fetchExploredSolutions(text: searchText)
+                        try await viewModel.fetchExploredSolutions(text: searchText)
                     }
                 }
             })
-                .padding(.vertical, 10)
+            .padding(.vertical, 10)
         }
         .padding(.horizontal)
         .padding(.vertical,6)
@@ -110,42 +116,55 @@ struct FeaturedView: View {
         }
         .padding(.top,20)
     }
-}
-
-//MARK: HeaderView
-@ViewBuilder
-func HeaderView(viewModel: FetchSCViewModel) -> some View{
-    HStack {
-        VStack(alignment: .leading, spacing: 6) {
-            NavigationLink(destination: SCListView().onDisappear(perform: {
-                Task{
-                    try await viewModel.fetchFeaturedSolutions()
+    
+    //MARK: HeaderView
+    @ViewBuilder
+    func HeaderView(viewModel: FetchSCViewModel) -> some View{
+        HStack {
+            VStack(alignment: .leading, spacing: 6) {
+                NavigationLink(destination: SCListView().onDisappear(perform: {
+                    Task{
+                        try await viewModel.fetchFeaturedSolutions()
+                    }
+                })){
+                    (Text("Hello")
+                        .fontWeight(.semibold) +
+                     Text("\(userInfo?.userName ?? "")")
+                    ).font(.title2)
+                    
+                    Text("see featured solution")
+                        .font(.callout)
+                        .foregroundColor(.gray)
+                    
+                }.frame(maxWidth: .infinity, alignment: .leading)
+            }
+            Button {
+                print("")
+            } label: {
+                if data != nil{
+                    Image(uiImage: UIImage(data: data!)!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .background{
+                            Circle().stroke(
+                                Color("CirclePink1")
+                            )
+                        }
+                }else{
+                    Image("")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 50, height: 50)
+                        .clipShape(Circle())
+                        .background{
+                            Circle().stroke(
+                                Color("CirclePink1")
+                            )
+                        }
                 }
-            })){
-                (Text("Hello")
-                    .fontWeight(.semibold) +
-                 Text("Aki")
-                ).font(.title2)
-                
-                Text("see featured solution")
-                    .font(.callout)
-                    .foregroundColor(.gray)
-                
-            }.frame(maxWidth: .infinity, alignment: .leading)
-        }
-        Button {
-            print("")
-        } label: {
-            Image("")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 50, height: 50)
-                .clipShape(Circle())
-                .background{
-                    Circle().stroke(
-                        Color("CirclePink1")
-                    )
-                }
+            }
         }
     }
 }

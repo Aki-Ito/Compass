@@ -22,13 +22,13 @@ public struct SolutionModel:Codable, Hashable, Identifiable, Equatable{
 extension SolutionModel{
     static func addSolution(solution: SolutionModel) async throws{
         do{
-            //            let user = Auth.auth().currentUser
+            let user = Auth.auth().currentUser
             let db = Firestore.firestore()
-            //            guard let user = user else {
-            //                return
-            //            }
+            guard let user = user else {
+                return
+            }
             //MARK: use test account
-            let solutionRef = db.collection("users").document("BqfIaUDFrmTW5otiSOA9USKgplK2").collection("solutions")
+            let solutionRef = db.collection("users").document(user.uid).collection("solutions")
             try solutionRef.addDocument(from: solution)
         }catch{
             throw error
@@ -38,7 +38,11 @@ extension SolutionModel{
     static func fetchSolution() async throws -> [SolutionModel]{
         do{
             let db = Firestore.firestore()
-            let solutionRef = db.collection("users").document("BqfIaUDFrmTW5otiSOA9USKgplK2").collection("solutions")
+            let user = Auth.auth().currentUser
+            guard let user = user else {
+                return []
+            }
+            let solutionRef = db.collection("users").document(user.uid).collection("solutions")
             
             let querySnapshot = try await solutionRef.order(by: "createdAt", descending: true).getDocuments()
             let solutions = try querySnapshot.documents.map {
@@ -54,7 +58,11 @@ extension SolutionModel{
     static func fetchFeaturedSolution() async throws -> [SolutionModel]{
         do{
             let db = Firestore.firestore()
-            let solutionRef = db.collection("users").document("BqfIaUDFrmTW5otiSOA9USKgplK2").collection("solutions")
+            let user = Auth.auth().currentUser
+            guard let user = user else {
+                return []
+            }
+            let solutionRef = db.collection("users").document(user.uid).collection("solutions")
             
             let querySnapshot = try await solutionRef.order(by: "createdAt", descending: true).getDocuments()
             let solutions = try querySnapshot.documents.map {
@@ -74,7 +82,11 @@ extension SolutionModel{
     static func searchData(text: String) async throws -> [SolutionModel]{
         do{
             let db = Firestore.firestore()
-            let solutionRef = db.collection("users").document("BqfIaUDFrmTW5otiSOA9USKgplK2").collection("solutions")
+            let user = Auth.auth().currentUser
+            guard let user = user else {
+                return []
+            }
+            let solutionRef = db.collection("users").document(user.uid).collection("solutions")
             
             let querySnapshot = try await solutionRef.order(by: "createdAt", descending: true).getDocuments()
             let solutions = try querySnapshot.documents.map {
