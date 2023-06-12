@@ -15,6 +15,12 @@ struct SignInView: View {
              SCBackgroundView()
              VStack {
                  Spacer()
+                 
+                 Image("aicon")
+                     .opacity(0.7)
+                 
+                 Spacer()
+                 
                  Button(action: {
                      signInWithAppleObject.signInWithApple()
                  }, label: {

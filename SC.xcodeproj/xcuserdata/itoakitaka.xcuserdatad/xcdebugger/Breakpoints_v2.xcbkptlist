@@ -3,4 +3,1251 @@
    uuid = "E92FAED3-81D9-47EA-B1BA-EBCA853F8F11"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FE06A6A9-21ED-4417-9B3E-7AF9822AA350"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SC/Model/Account/AccountModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "deleteUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FE06A6A9-21ED-4417-9B3E-7AF9822AA350 - 196dca3215cd5b2b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "FE06A6A9-21ED-4417-9B3E-7AF9822AA350 - 838936c4839bc016"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) await resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "FE06A6A9-21ED-4417-9B3E-7AF9822AA350 - 1e794477de8aef17"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "FE06A6A9-21ED-4417-9B3E-7AF9822AA350 - 1e794477de8ae925"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "FE06A6A9-21ED-4417-9B3E-7AF9822AA350 - 9483a75e3ef45d4a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "FE06A6A9-21ED-4417-9B3E-7AF9822AA350 - 9483a75e3ef45b78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "FE06A6A9-21ED-4417-9B3E-7AF9822AA350 - 9483a75e3ef45d4a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "FE06A6A9-21ED-4417-9B3E-7AF9822AA350 - 9483a75e3ef45b78"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "180">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "80761A2B-0C28-428C-9E1F-77887CDB01D5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SC/Model/Account/AccountModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "deleteUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "80761A2B-0C28-428C-9E1F-77887CDB01D5 - 2b4425cabb7af9fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "80761A2B-0C28-428C-9E1F-77887CDB01D5 - 3c06f2a01b46223f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static SC.Account.deleteUser(password: Swift.String) async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "764">
+               </Location>
+               <Location
+                  uuid = "80761A2B-0C28-428C-9E1F-77887CDB01D5 - 28f6fe5c33df7ec5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for static SC.Account.deleteUser(password: Swift.String) async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SC/Model/Account/AccountModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "deleteUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 57bb0bef436ee60f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static SC.Account.deleteUser(password: Swift.String) async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "928">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 57bb0bef436ee60f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static SC.Account.deleteUser(password: Swift.String) async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "944">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - f7c5a2e09ff35008"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for static SC.Account.deleteUser(password: Swift.String) async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - f7c5a2e09ff35008"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for static SC.Account.deleteUser(password: Swift.String) async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 42ab178b7be73209"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for static SC.Account.deleteUser(password: Swift.String) async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 42ab178b7be73209"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for static SC.Account.deleteUser(password: Swift.String) async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "316">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 203fa57b49c4b9b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for static SC.Account.deleteUser(password: Swift.String) async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "300">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 203fa57b49c4b9b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for static SC.Account.deleteUser(password: Swift.String) async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "316">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 2b4425cabb7af91d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 1050500e6c378b1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "296">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 196dca3215cd5d19"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 1e794477de8aef17"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 83f0b995fa254614"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 78afebb8647b115"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 9483a75e3ef45d4a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 1050500e6c378b1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "320">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 83f0b995fa254614"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 78afebb8647b115"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "2B9E1329-F3DB-4D79-8D54-2B734185ABCF - 9483a75e3ef45d4a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "120">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4B4314BF-1179-4488-A68D-F890F77E82F9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SC/Model/Account/AccountModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "deleteUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4B4314BF-1179-4488-A68D-F890F77E82F9 - 3c06f2a01b46223f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static SC.Account.deleteUser(password: Swift.String) async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "764">
+               </Location>
+               <Location
+                  uuid = "4B4314BF-1179-4488-A68D-F890F77E82F9 - 2b4425cabb7af9d3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "252">
+               </Location>
+               <Location
+                  uuid = "4B4314BF-1179-4488-A68D-F890F77E82F9 - 28f6fe5c33df7ec5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for static SC.Account.deleteUser(password: Swift.String) async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "095014E6-CA80-452A-A6D6-212220E94BF7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SC/Model/Account/AccountModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "deleteUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "095014E6-CA80-452A-A6D6-212220E94BF7 - 1050500e6c378d6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "592">
+               </Location>
+               <Location
+                  uuid = "095014E6-CA80-452A-A6D6-212220E94BF7 - 780024f94cb03652"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "095014E6-CA80-452A-A6D6-212220E94BF7 - 196dca3215cd5d19"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  uuid = "095014E6-CA80-452A-A6D6-212220E94BF7 - 196dca3215cd5b6d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "095014E6-CA80-452A-A6D6-212220E94BF7 - 78afebb8647b115"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "095014E6-CA80-452A-A6D6-212220E94BF7 - 78afebb8647b761"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "095014E6-CA80-452A-A6D6-212220E94BF7 - 1050500e6c378d6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "616">
+               </Location>
+               <Location
+                  uuid = "095014E6-CA80-452A-A6D6-212220E94BF7 - 78afebb8647b115"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "095014E6-CA80-452A-A6D6-212220E94BF7 - 78afebb8647b761"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "180">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7B44C444-913B-4ADD-AC90-15B635CE349F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SC/Model/Account/AccountModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "deleteUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7B44C444-913B-4ADD-AC90-15B635CE349F - 1050500e6c378c30"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "344">
+               </Location>
+               <Location
+                  uuid = "7B44C444-913B-4ADD-AC90-15B635CE349F - 31326a58099d051f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static SC.Account.logoutUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "7B44C444-913B-4ADD-AC90-15B635CE349F - 1050500e6c378c30"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "368">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D58A32AB-686E-4690-9E5D-3A7FF63D3B4A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SC/Model/Account/AccountModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "deleteUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D58A32AB-686E-4690-9E5D-3A7FF63D3B4A - 1050500e6c378c76"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "D58A32AB-686E-4690-9E5D-3A7FF63D3B4A - 31326a58099d0559"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static SC.Account.logoutUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "D58A32AB-686E-4690-9E5D-3A7FF63D3B4A - 1050500e6c378c76"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0327CB21-CA9A-4284-87D5-B1B189B920EF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SC/Model/Account/AccountModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "deleteUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0327CB21-CA9A-4284-87D5-B1B189B920EF - 2b4425cabb7af991"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "556">
+               </Location>
+               <Location
+                  uuid = "0327CB21-CA9A-4284-87D5-B1B189B920EF - ee9bd32e0dad6aa4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "0327CB21-CA9A-4284-87D5-B1B189B920EF - 1050500e6c378b97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "0327CB21-CA9A-4284-87D5-B1B189B920EF - 83f0b995fa254614"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "0327CB21-CA9A-4284-87D5-B1B189B920EF - 83f0b995fa254698"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "0327CB21-CA9A-4284-87D5-B1B189B920EF - d6f15ac961fc9021"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static SC.Account.logoutUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "0327CB21-CA9A-4284-87D5-B1B189B920EF - 31326a58099d02b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static SC.Account.logoutUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "0327CB21-CA9A-4284-87D5-B1B189B920EF - 1050500e6c378b97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "0327CB21-CA9A-4284-87D5-B1B189B920EF - 83f0b995fa254614"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "0327CB21-CA9A-4284-87D5-B1B189B920EF - 83f0b995fa254698"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "00425F7F-831E-4349-8366-21AFA6E9C3CA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SC/Model/Account/AccountModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "deleteUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "00425F7F-831E-4349-8366-21AFA6E9C3CA - d6f15ac961fc9021"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static SC.Account.logoutUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "00425F7F-831E-4349-8366-21AFA6E9C3CA - 31326a58099d02b8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static SC.Account.logoutUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "00425F7F-831E-4349-8366-21AFA6E9C3CA - 2b4425cabb7af9b2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "332">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F4B7ABBC-0DDA-49FB-8C52-DD2865C3226D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SC/Model/Account/AccountModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "deleteUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F4B7ABBC-0DDA-49FB-8C52-DD2865C3226D - 2b4425cabb7affa3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "740">
+               </Location>
+               <Location
+                  uuid = "F4B7ABBC-0DDA-49FB-8C52-DD2865C3226D - 1e794477de8ae9a9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "F4B7ABBC-0DDA-49FB-8C52-DD2865C3226D - 1050500e6c378dca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "1112">
+               </Location>
+               <Location
+                  uuid = "F4B7ABBC-0DDA-49FB-8C52-DD2865C3226D - 1050500e6c378dca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "1128">
+               </Location>
+               <Location
+                  uuid = "F4B7ABBC-0DDA-49FB-8C52-DD2865C3226D - 83f0b995fa2540c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "400">
+               </Location>
+               <Location
+                  uuid = "F4B7ABBC-0DDA-49FB-8C52-DD2865C3226D - 83f0b995fa2540c5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(8) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "416">
+               </Location>
+               <Location
+                  uuid = "F4B7ABBC-0DDA-49FB-8C52-DD2865C3226D - 78afebb8647b7c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "484">
+               </Location>
+               <Location
+                  uuid = "F4B7ABBC-0DDA-49FB-8C52-DD2865C3226D - 78afebb8647b7c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(9) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "500">
+               </Location>
+               <Location
+                  uuid = "F4B7ABBC-0DDA-49FB-8C52-DD2865C3226D - 9483a75e3ef45b9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "484">
+               </Location>
+               <Location
+                  uuid = "F4B7ABBC-0DDA-49FB-8C52-DD2865C3226D - 9483a75e3ef45b9b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(10) suspend resume partial function for static SC.Account.deleteUser() async throws -&gt; ()"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/Model/Account/AccountModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "118"
+                  endingLineNumber = "118"
+                  offsetFromSymbolStart = "500">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

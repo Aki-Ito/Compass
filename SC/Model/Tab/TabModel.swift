@@ -9,4 +9,5 @@ import Foundation
 enum Tab: String,CaseIterable{
     case solution = "square.and.pencil"
     case compassion = "book"
+    case account = "person"
 }

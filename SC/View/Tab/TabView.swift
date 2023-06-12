@@ -18,6 +18,8 @@ struct TabBarView: View {
                     .tag(Tab.solution)
                 CompassionCalendarView()
                     .tag(Tab.compassion)
+                EditAccountView()
+                    .tag(Tab.account)
             }
             
             VStack {

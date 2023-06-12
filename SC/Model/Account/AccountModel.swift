@@ -38,6 +38,21 @@ extension Account{
         }
     }
     
+    static func editUser(userName:String) async throws{
+        do{
+            let db = Firestore.firestore()
+            guard let uid = Auth.auth().currentUser?.uid else {return}
+            let accountRef = db.collection("users").document(uid)
+            let data = [
+                "userName": userName,
+                "userUid": uid
+            ] as [String : Any]
+            try await accountRef.setData(data, merge: true)
+        }catch{
+            throw error
+        }
+    }
+    
     static func uploadImage(data: Data) async throws{
         do{
             let user = Auth.auth().currentUser
@@ -72,15 +87,16 @@ extension Account{
             //MARK: fetch from Storage
             let user = Auth.auth().currentUser
             guard let uid = user?.uid else {return nil}
-            let userRef = storage.child("users").child(uid)
-            let imageData = try await userRef.data(maxSize: 100)
+            let userRef = storage.child("users").child("\(uid).jpg")
+            let imageData = try await userRef.data(maxSize: 1000000)
             return imageData
         }catch{
+            print(error)
             throw error
         }
     }
     
-    static func deleteUser(password: String) async throws{
+    static func deleteUser() async throws{
         do{
             let user = Auth.auth().currentUser
             guard let user = user else {return}
@@ -98,6 +114,7 @@ extension Account{
             //MARK: delete user
             try await user.delete()
         }catch{
+            print(error)
             throw error
         }
     }

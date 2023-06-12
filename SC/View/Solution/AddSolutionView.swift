@@ -34,7 +34,7 @@ struct AddSolutionView: View {
                         }
                         .foregroundColor(Color("CirclePink1"))
                         .alert(isPresented: $showingAlert) {
-                            Alert(title: Text("Save?"),dismissButton: .default(Text("OK"),action: {
+                            Alert(title: Text("Save?"),dismissButton: .default(Text("OK").foregroundColor(Color("CirclePink1")),action: {
                                 //MARK: access viewModel
                                 Task{
                                     do{

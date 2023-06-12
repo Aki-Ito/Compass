@@ -14,8 +14,6 @@ struct FeaturedView: View {
     @StateObject var solutionViewModel = FetchSCViewModel()
     @StateObject var accountViewModel = AccountViewModel()
     
-    
-    
     var body: some View {
         NavigationStack {
             ZStack{
