@@ -19,6 +19,7 @@
 		2C90488B2A31BA51005A9F4E /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C90488A2A31BA51005A9F4E /* CalendarModel.swift */; };
 		2C90488F2A325D6D005A9F4E /* DateFormatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C90488E2A325D6D005A9F4E /* DateFormatRepository.swift */; };
 		2C9048922A33290D005A9F4E /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9048912A33290D005A9F4E /* TabView.swift */; };
+		2C909CBB2A3B694900423396 /* CompassionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C909CBA2A3B694900423396 /* CompassionEnum.swift */; };
 		2C99009A2A1FD34D00CDD4BC /* EditSolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9900992A1FD34D00CDD4BC /* EditSolutionView.swift */; };
 		2C99009C2A22011E00CDD4BC /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C99009B2A22011E00CDD4BC /* AccountViewModel.swift */; };
 		2C99009E2A22014500CDD4BC /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C99009D2A22014500CDD4BC /* AccountModel.swift */; };
@@ -61,6 +62,7 @@
 		2C90488A2A31BA51005A9F4E /* CalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
 		2C90488E2A325D6D005A9F4E /* DateFormatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatRepository.swift; sourceTree = "<group>"; };
 		2C9048912A33290D005A9F4E /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		2C909CBA2A3B694900423396 /* CompassionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassionEnum.swift; sourceTree = "<group>"; };
 		2C9900992A1FD34D00CDD4BC /* EditSolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSolutionView.swift; sourceTree = "<group>"; };
 		2C99009B2A22011E00CDD4BC /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		2C99009D2A22014500CDD4BC /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			children = (
 				2CA0EDF32A13978D00653D05 /* FeaturedModel.swift */,
 				2C90488A2A31BA51005A9F4E /* CalendarModel.swift */,
+				2C909CBA2A3B694900423396 /* CompassionEnum.swift */,
 			);
 			path = Compassion;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				2CD037E32A1D1DDA00C3B4C7 /* SolutionModel.swift in Sources */,
 				2CD037D22A1D199300C3B4C7 /* AddSCViewModel.swift in Sources */,
 				2C9048562A30B006005A9F4E /* CalendarViewModel.swift in Sources */,
+				2C909CBB2A3B694900423396 /* CompassionEnum.swift in Sources */,
 				2CD037CF2A1BBBF300C3B4C7 /* AddSolutionView.swift in Sources */,
 				2CD037CD2A1B990900C3B4C7 /* SCBackgroundView.swift in Sources */,
 				2C8256792A0CC03B002C31F9 /* SCApp.swift in Sources */,
@@ -546,6 +550,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -576,6 +581,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
