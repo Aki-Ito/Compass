@@ -87,7 +87,7 @@ struct EditAccountView: View {
                                 self.showingLogoutAlert = true
                             }
                             .alert(isPresented: $showingLogoutAlert) {
-                                Alert(title: Text("logout?"),primaryButton:.cancel(Text("cancel")),secondaryButton: .destructive(Text("OK"),action: {
+                                Alert(title: Text("logout?"),primaryButton:.cancel(Text("cancel").foregroundColor(Color("CirclePink1"))),secondaryButton: .destructive(Text("OK"),action: {
                                     //MARK: access viewModel
                                     self.isShowLogInView = true
                                 }))
@@ -103,7 +103,7 @@ struct EditAccountView: View {
                                 self.showingDeleteAlert = true
                             }
                             .alert(isPresented: $showingDeleteAlert) {
-                                Alert(title: Text("delete?"),primaryButton:.cancel(Text("cancel")     ),secondaryButton: .destructive(Text("OK"),action: {
+                                Alert(title: Text("delete?"),primaryButton:.cancel(Text("cancel").foregroundColor(Color("CirclePink1"))     ),secondaryButton: .destructive(Text("OK"),action: {
                                     //MARK: access viewModel
                                     Task{
                                         signInWithAppleObject.deleteCurrentUser()
@@ -140,6 +140,8 @@ struct EditAccountView: View {
         .onAppear{
             Task{
                 try await viewModel.fetchImage()
+                try await viewModel.fetchUserInfo()
+                self.text = viewModel.account?.userName ?? ""
             }
         }
     }
