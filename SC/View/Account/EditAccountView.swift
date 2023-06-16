@@ -12,11 +12,14 @@ struct EditAccountView: View {
     @State private var showingAlert = false
     @State private var showingLogoutAlert = false
     @State private var showingDeleteAlert = false
+    @State private var isShowLogInView = false
     
     @State private var image: UIImage?
     @State var text: String = ""
     
     @ObservedObject var viewModel = AccountViewModel()
+    @ObservedObject private var signInWithAppleObject = SignInWithAppleRepository()
+    
     var body: some View {
         NavigationStack{
             ZStack{
@@ -86,30 +89,29 @@ struct EditAccountView: View {
                             .alert(isPresented: $showingLogoutAlert) {
                                 Alert(title: Text("logout?"),primaryButton:.cancel(Text("cancel")),secondaryButton: .destructive(Text("OK"),action: {
                                     //MARK: access viewModel
-                                    Task{
-                                        try await viewModel.logOut()
-                                    }
-                                    
+                                    self.isShowLogInView = true
                                 }))
                             }
-                           
+                            .fullScreenCover(isPresented: $isShowLogInView) {
+                                SignInView()
+                            }
+                        
                         Text("delete account")
+                            .foregroundColor(.red)
                             .listRowBackground(Color.white.opacity(0.2))
                             .onTapGesture {
                                 self.showingDeleteAlert = true
                             }
                             .alert(isPresented: $showingDeleteAlert) {
-                                Alert(title: Text("delete?"),primaryButton:.cancel(Text("cancel")),secondaryButton: .destructive(Text("OK"),action: {
+                                Alert(title: Text("delete?"),primaryButton:.cancel(Text("cancel")     ),secondaryButton: .destructive(Text("OK"),action: {
                                     //MARK: access viewModel
                                     Task{
-                                        do{
-                                            try await viewModel.deleteUser()
-                                        }catch{
-                                            throw error
-                                        }
+                                        signInWithAppleObject.deleteCurrentUser()
                                     }
-                                    
                                 }))
+                            }
+                            .fullScreenCover(isPresented: $signInWithAppleObject.isShow) {
+                                SignInView()
                             }
                     }
                     .background(.clear)

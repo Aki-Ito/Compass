@@ -14,7 +14,7 @@ import AuthenticationServices
 
 class Account: Codable,Identifiable{
     @DocumentID public var id: String?
-    var userName: String
+    var userName: String = ""
     var userUid: String
     var appleIDToken: String
     var nonce: String
@@ -104,6 +104,7 @@ extension Account{
             let accountRef = db.collection("users").document(user.uid)
             let account = try await accountRef.getDocument()
             let convertedAccount = try account.data(as: Account.self)
+            
             //MARK: reauthenticate
             let credential = OAuthProvider.credential(
               withProviderID: "apple.com",

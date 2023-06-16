@@ -6,8 +6,8 @@
 //
 
 import Foundation
-struct DateFormatRepository{
-    static let shared = DateFormatRepository()
+struct DateFormatHelper{
+    static let shared = DateFormatHelper()
     func dateFormat(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.calendar = Calendar(identifier: .gregorian)

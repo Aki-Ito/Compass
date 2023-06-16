@@ -19,7 +19,7 @@ public struct CalendarModel: Codable,Identifiable{
 }
 
 extension CalendarModel{
-    static let repository = DateFormatRepository.shared
+    static let repository = DateFormatHelper.shared
     
     static func addData(selfkindness: String, commonHumanity:String, mindfullness: String,createdAt: Timestamp) async throws{
         do{

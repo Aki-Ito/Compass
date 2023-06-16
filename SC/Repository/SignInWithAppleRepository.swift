@@ -13,9 +13,12 @@ import FirebaseFirestore
 
 public class SignInWithAppleRepository: NSObject, ObservableObject{
     @Published var isShow: Bool = false
+    var createAccount: Bool = false
+    var deleteAccount: Bool = false
     
     private var currentNonce: String?
     public func signInWithApple() {
+        createAccount.toggle()
         let request = ASAuthorizationAppleIDProvider().createRequest()
         request.requestedScopes = [.email, .fullName]
         let nonce = randomNonceString()
@@ -26,6 +29,21 @@ public class SignInWithAppleRepository: NSObject, ObservableObject{
         authorizationController.delegate = self
         authorizationController.performRequests()
     }
+    
+    public func deleteCurrentUser() {
+        deleteAccount.toggle()
+        let nonce = randomNonceString()
+        currentNonce = nonce
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIDProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        request.nonce = sha256(nonce)
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+        authorizationController.delegate = self
+        authorizationController.performRequests()
+    }
+    
     
     //  https://auth0.com/docs/api-auth/tutorials/nonce#generate-a-cryptographically-random-nonce
     private func randomNonceString(length: Int = 32) -> String {
@@ -91,22 +109,39 @@ extension SignInWithAppleRepository: ASAuthorizationControllerDelegate {
                 return
             }
             
+            guard let appleAuthCode = appleIDCredential.authorizationCode else {
+                print("Unable to fetch authorization code")
+                return
+            }
+            
+            guard let authCodeString = String(data: appleAuthCode, encoding: .utf8) else {
+                print("Unable to serialize auth code string from data: \(appleAuthCode.debugDescription)")
+                return
+            }
+            
             let credential = OAuthProvider.credential(withProviderID: "apple.com", idToken: idTokenString, rawNonce: nonce)
-                Auth.auth().signIn(with: credential) { result, error in
+            
+            Auth.auth().signIn(with: credential) { result, error in
                 guard error == nil else {
                     print(error!.localizedDescription)
                     return
                 }
-                guard let uid = result?.user.uid else {return}
-                let accountRef = Firestore.firestore().collection("users").document(uid)
-                let data = [
-                    "userName": "guest",
-                    "userUid": uid,
-                    "appleIDToken": idTokenString,
-                    "nonce": nonce
-                ] as [String : Any]
-                accountRef.setData(data, merge: true)
-                self.isShow = true
+                if self.createAccount{
+                    guard let uid = result?.user.uid else {return}
+                    let accountRef = Firestore.firestore().collection("users").document(uid)
+                    let data = [
+                        "userUid": uid,
+                        "appleIDToken": idTokenString,
+                        "nonce": nonce
+                    ] as [String : Any]
+                    accountRef.setData(data, merge: true)
+                    self.isShow = true
+                }
+                if self.deleteAccount{
+                    Auth.auth().revokeToken(withAuthorizationCode: authCodeString)
+                    Auth.auth().currentUser?.delete()
+                    self.isShow = true
+                }
             }
         }
     }

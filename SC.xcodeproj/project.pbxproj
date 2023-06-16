@@ -17,7 +17,7 @@
 		2C9048562A30B006005A9F4E /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9048552A30B006005A9F4E /* CalendarViewModel.swift */; };
 		2C9048782A31050A005A9F4E /* AddCompassionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9048772A31050A005A9F4E /* AddCompassionView.swift */; };
 		2C90488B2A31BA51005A9F4E /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C90488A2A31BA51005A9F4E /* CalendarModel.swift */; };
-		2C90488F2A325D6D005A9F4E /* DateFormatRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C90488E2A325D6D005A9F4E /* DateFormatRepository.swift */; };
+		2C90488F2A325D6D005A9F4E /* DateFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C90488E2A325D6D005A9F4E /* DateFormatHelper.swift */; };
 		2C9048922A33290D005A9F4E /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9048912A33290D005A9F4E /* TabView.swift */; };
 		2C909CBB2A3B694900423396 /* CompassionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C909CBA2A3B694900423396 /* CompassionEnum.swift */; };
 		2C99009A2A1FD34D00CDD4BC /* EditSolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9900992A1FD34D00CDD4BC /* EditSolutionView.swift */; };
@@ -60,9 +60,10 @@
 		2C9048552A30B006005A9F4E /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		2C9048772A31050A005A9F4E /* AddCompassionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompassionView.swift; sourceTree = "<group>"; };
 		2C90488A2A31BA51005A9F4E /* CalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
-		2C90488E2A325D6D005A9F4E /* DateFormatRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatRepository.swift; sourceTree = "<group>"; };
+		2C90488E2A325D6D005A9F4E /* DateFormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatHelper.swift; sourceTree = "<group>"; };
 		2C9048912A33290D005A9F4E /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		2C909CBA2A3B694900423396 /* CompassionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassionEnum.swift; sourceTree = "<group>"; };
+		2C909CBE2A3D101A00423396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2C9900992A1FD34D00CDD4BC /* EditSolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSolutionView.swift; sourceTree = "<group>"; };
 		2C99009B2A22011E00CDD4BC /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		2C99009D2A22014500CDD4BC /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
@@ -106,6 +107,7 @@
 		2C4079CB2A349E7C00B2E90A /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				2C90488E2A325D6D005A9F4E /* DateFormatHelper.swift */,
 				2C4079CC2A349E9600B2E90A /* KeyboardObserver.swift */,
 			);
 			path = Helper;
@@ -130,6 +132,7 @@
 		2C8256772A0CC03B002C31F9 /* SC */ = {
 			isa = PBXGroup;
 			children = (
+				2C909CBE2A3D101A00423396 /* Info.plist */,
 				2C9900A32A22404300CDD4BC /* SC.entitlements */,
 				2CD037E42A1DF82E00C3B4C7 /* GoogleService-Info.plist */,
 				2C82567C2A0CC03C002C31F9 /* Assets.xcassets */,
@@ -155,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				2C9900A42A2240EB00CDD4BC /* SignInWithAppleRepository.swift */,
-				2C90488E2A325D6D005A9F4E /* DateFormatRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -400,7 +402,7 @@
 				2C8256792A0CC03B002C31F9 /* SCApp.swift in Sources */,
 				2C9900A52A2240EB00CDD4BC /* SignInWithAppleRepository.swift in Sources */,
 				2CD54B5A2A2DE4D100966D39 /* CalendarView.swift in Sources */,
-				2C90488F2A325D6D005A9F4E /* DateFormatRepository.swift in Sources */,
+				2C90488F2A325D6D005A9F4E /* DateFormatHelper.swift in Sources */,
 				2CD54B582A2DE44900966D39 /* CompassionCalendarView.swift in Sources */,
 				2C4079CD2A349E9600B2E90A /* KeyboardObserver.swift in Sources */,
 				2C99009C2A22011E00CDD4BC /* AccountViewModel.swift in Sources */,
@@ -547,6 +549,8 @@
 				DEVELOPMENT_TEAM = VYY6NT3X7Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SC/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Use photo library for user aicon";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -578,6 +582,8 @@
 				DEVELOPMENT_TEAM = VYY6NT3X7Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SC/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Use photo library for user aicon";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
