@@ -24,7 +24,8 @@ struct AddCompassionView: View {
     var body: some View {
         NavigationStack{
             ZStack {
-                Color("CirclePink2")
+                //MARK: backgroundView
+                LinearGradient(colors: [Color( "BG1"),Color("BG2")], startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea()
                 CompassionView()
                     .padding()
@@ -68,18 +69,27 @@ struct AddCompassionView: View {
                         textState = .selfkindness
                         editText = selfkindness
                     } label: {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(.white)
-                            .opacity(0.5)
-                            .background(
-                                Color.white.opacity(0.08)
-                                    .blur(radius: 10)
-                            )
-                            .frame(width: 80, height: 80)
-
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(.white)
+                                .opacity(0.5)
+                                .background(
+                                    Color.white.opacity(0.08)
+                                        .blur(radius: 10)
+                                )
+                                .frame(width: 80, height: 80)
+                                .shadow(color: Color("CirclePink1"),radius: textState == .selfkindness ? 10 : 0)
+                            
+                            Image("heart")
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .scaledToFit()
+                            
+                        }
                     }
-                    .shadow(color: Color("CirclePink1"),radius: textState == .selfkindness ? 10 : 0)
+                    
                     Text("selfkindness")
+                        .font(.caption)
                 }.padding()
                 VStack {
                     Button {
@@ -91,19 +101,26 @@ struct AddCompassionView: View {
                         textState = .commonHumanity
                         editText = commonHumanity
                     } label: {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(.white)
-                            .opacity(0.5)
-                            .background(
-                                Color.white.opacity(0.08)
-                                    .blur(radius: 10)
-                            )
-                            .frame(width: 80, height: 80)
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(.white)
+                                .opacity(0.5)
+                                .background(
+                                    Color.white.opacity(0.08)
+                                        .blur(radius: 10)
+                                )
+                                .frame(width: 80, height: 80)
+                                .shadow(color: Color("CirclePink1"),radius: textState == .commonHumanity ? 10 : 0)
                             
+                            Image("circle")
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .scaledToFit()
+                        }
                     }
-                    .shadow(color: Color("CirclePink1"),radius: textState == .commonHumanity ? 10 : 0)
 
                     Text("commonality")
+                        .font(.caption)
                 }.padding()
                 
                 VStack{
@@ -125,15 +142,16 @@ struct AddCompassionView: View {
                                         .blur(radius: 10)
                                 )
                                 .frame(width: 80, height: 80)
+                                .shadow(color: Color("CirclePink1"), radius: textState == .mindfullness ? 10 : 0)
                             Image("mindfullness")
                                 .resizable()
                                 .frame(width: 70, height: 70)
                                 .scaledToFit()
                         }
                     }
-                    .shadow(color: Color("CirclePink1"), radius: textState == .mindfullness ? 10 : 0)
 
                     Text("mindfulness")
+                        .font(.caption)
                 }.padding()
             }
             TextEditor(text: $editText)
