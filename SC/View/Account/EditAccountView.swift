@@ -13,6 +13,7 @@ struct EditAccountView: View {
     @State private var showingLogoutAlert = false
     @State private var showingDeleteAlert = false
     @State private var isShowLogInView = false
+    @State var showingIndicator = true
     
     @State private var image: UIImage?
     @State var text: String = ""
@@ -117,6 +118,9 @@ struct EditAccountView: View {
                     .background(.clear)
                     .scrollContentBackground(.hidden)
                 }
+                if showingIndicator {
+                    ActivityIndicatorHelper()
+                }
             }
             .navigationTitle("Account")
             .toolbar {
@@ -139,11 +143,21 @@ struct EditAccountView: View {
         }
         .onAppear{
             Task{
-                try await viewModel.fetchImage()
-                try await viewModel.fetchUserInfo()
-                self.text = viewModel.account?.userName ?? ""
+                self.showingIndicator.toggle()
+                do{
+                    try await viewModel.fetchImage()
+                    try await viewModel.fetchUserInfo()
+                    self.text = viewModel.account?.userName ?? ""
+                }catch{
+                    print("error")
+                }
+                self.showingIndicator = false
             }
         }
+        
+        
+        
+        
     }
 }
 

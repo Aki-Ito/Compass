@@ -20,6 +20,7 @@
 		2C90488F2A325D6D005A9F4E /* DateFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C90488E2A325D6D005A9F4E /* DateFormatHelper.swift */; };
 		2C9048922A33290D005A9F4E /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9048912A33290D005A9F4E /* TabView.swift */; };
 		2C909CBB2A3B694900423396 /* CompassionEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C909CBA2A3B694900423396 /* CompassionEnum.swift */; };
+		2C909CC02A3D82AD00423396 /* ActivityIndicatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C909CBF2A3D82AD00423396 /* ActivityIndicatorHelper.swift */; };
 		2C99009A2A1FD34D00CDD4BC /* EditSolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9900992A1FD34D00CDD4BC /* EditSolutionView.swift */; };
 		2C99009C2A22011E00CDD4BC /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C99009B2A22011E00CDD4BC /* AccountViewModel.swift */; };
 		2C99009E2A22014500CDD4BC /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C99009D2A22014500CDD4BC /* AccountModel.swift */; };
@@ -28,7 +29,6 @@
 		2C9900A92A22448000CDD4BC /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9900A82A22448000CDD4BC /* SignInView.swift */; };
 		2CA0EDEA2A0D36A100653D05 /* SCListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0EDE92A0D36A100653D05 /* SCListView.swift */; };
 		2CA0EDEE2A0FE2A400653D05 /* FeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0EDED2A0FE2A400653D05 /* FeaturedView.swift */; };
-		2CA0EDF42A13978D00653D05 /* FeaturedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA0EDF32A13978D00653D05 /* FeaturedModel.swift */; };
 		2CD037C82A192EEF00C3B4C7 /* TabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD037C72A192EEF00C3B4C7 /* TabModel.swift */; };
 		2CD037CA2A19348C00C3B4C7 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD037C92A19348C00C3B4C7 /* Carousel.swift */; };
 		2CD037CD2A1B990900C3B4C7 /* SCBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD037CC2A1B990900C3B4C7 /* SCBackgroundView.swift */; };
@@ -64,6 +64,7 @@
 		2C9048912A33290D005A9F4E /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		2C909CBA2A3B694900423396 /* CompassionEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassionEnum.swift; sourceTree = "<group>"; };
 		2C909CBE2A3D101A00423396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2C909CBF2A3D82AD00423396 /* ActivityIndicatorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorHelper.swift; sourceTree = "<group>"; };
 		2C9900992A1FD34D00CDD4BC /* EditSolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSolutionView.swift; sourceTree = "<group>"; };
 		2C99009B2A22011E00CDD4BC /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		2C99009D2A22014500CDD4BC /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		2C9900A82A22448000CDD4BC /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		2CA0EDE92A0D36A100653D05 /* SCListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCListView.swift; sourceTree = "<group>"; };
 		2CA0EDED2A0FE2A400653D05 /* FeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedView.swift; sourceTree = "<group>"; };
-		2CA0EDF32A13978D00653D05 /* FeaturedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedModel.swift; sourceTree = "<group>"; };
 		2CD037C72A192EEF00C3B4C7 /* TabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabModel.swift; sourceTree = "<group>"; };
 		2CD037C92A19348C00C3B4C7 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		2CD037CC2A1B990900C3B4C7 /* SCBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBackgroundView.swift; sourceTree = "<group>"; };
@@ -109,6 +109,7 @@
 			children = (
 				2C90488E2A325D6D005A9F4E /* DateFormatHelper.swift */,
 				2C4079CC2A349E9600B2E90A /* KeyboardObserver.swift */,
+				2C909CBF2A3D82AD00423396 /* ActivityIndicatorHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -247,7 +248,6 @@
 		2C9048882A31B704005A9F4E /* Compassion */ = {
 			isa = PBXGroup;
 			children = (
-				2CA0EDF32A13978D00653D05 /* FeaturedModel.swift */,
 				2C90488A2A31BA51005A9F4E /* CalendarModel.swift */,
 				2C909CBA2A3B694900423396 /* CompassionEnum.swift */,
 			);
@@ -406,10 +406,10 @@
 				2CD54B582A2DE44900966D39 /* CompassionCalendarView.swift in Sources */,
 				2C4079CD2A349E9600B2E90A /* KeyboardObserver.swift in Sources */,
 				2C99009C2A22011E00CDD4BC /* AccountViewModel.swift in Sources */,
-				2CA0EDF42A13978D00653D05 /* FeaturedModel.swift in Sources */,
 				2C99009E2A22014500CDD4BC /* AccountModel.swift in Sources */,
 				2C90488B2A31BA51005A9F4E /* CalendarModel.swift in Sources */,
 				2CD037C82A192EEF00C3B4C7 /* TabModel.swift in Sources */,
+				2C909CC02A3D82AD00423396 /* ActivityIndicatorHelper.swift in Sources */,
 				2CA0EDEA2A0D36A100653D05 /* SCListView.swift in Sources */,
 				2C4079F12A35A29C00B2E90A /* EditAccountView.swift in Sources */,
 				2C9048922A33290D005A9F4E /* TabView.swift in Sources */,
