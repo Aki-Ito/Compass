@@ -32,6 +32,13 @@ struct AddCompassionView: View {
                     .toolbar {
                         ToolbarItem {
                             Button("save") {
+                                if textState == .selfkindness{
+                                    selfkindness = editText
+                                }else if textState == .commonHumanity{
+                                    commonHumanity = editText
+                                }else if textState == .mindfullness{
+                                    mindfullness = editText
+                                }
                                 self.showingAlert = true
                             }
                             .alert(isPresented: $showingAlert) {
@@ -51,6 +58,8 @@ struct AddCompassionView: View {
                 self.selfkindness = data?.selfkindness ?? ""
                 self.commonHumanity = data?.commonHumanity ?? ""
                 self.mindfullness = data?.mindfullness ?? ""
+                
+                self.editText = selfkindness
             }
         }
     }
@@ -61,7 +70,9 @@ struct AddCompassionView: View {
             HStack {
                 VStack {
                     Button {
-                        if textState == .commonHumanity{
+                        if textState == .selfkindness{
+                            selfkindness = editText
+                        }else if textState == .commonHumanity{
                             commonHumanity = editText
                         }else if textState == .mindfullness{
                             mindfullness = editText
@@ -95,6 +106,8 @@ struct AddCompassionView: View {
                     Button {
                         if textState == .selfkindness{
                             selfkindness = editText
+                        }else if textState == .commonHumanity{
+                            commonHumanity = editText
                         }else if textState == .mindfullness{
                             mindfullness = editText
                         }
@@ -125,10 +138,12 @@ struct AddCompassionView: View {
                 
                 VStack{
                     Button {
-                        if textState == .commonHumanity{
-                            commonHumanity = editText
-                        }else if textState == .selfkindness{
+                        if textState == .selfkindness{
                             selfkindness = editText
+                        }else if textState == .commonHumanity{
+                            commonHumanity = editText
+                        }else if textState == .mindfullness{
+                            mindfullness = editText
                         }
                         textState = .mindfullness
                         editText = mindfullness
