@@ -1,4 +1,5 @@
 # Compass
+Compass is the application that we can use for self-compassion & mental stability
 <p>
 <img src="https://github.com/Aki-Ito/SC/assets/60352606/26c83dd0-1007-4fa8-abbc-8f5c275a82e4" width="150">
 <img src="https://github.com/Aki-Ito/SC/assets/60352606/5e999fb8-3bcf-4b6e-bcf4-ab2df6ea2e34" width="150">
@@ -18,3 +19,4 @@ I manage libraries by using SPM(Swift Package Manager)
 - Firebase Cloud Firestore
 - Firebase Authentication
 - Firebase Storage
+
