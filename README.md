@@ -23,6 +23,6 @@ I manage libraries by using SPM(Swift Package Manager)
 ## Easy usage
 |     login     | FeaturedView  |   Calendar    |  Compassion   |
 | ------------- | ------------- | ------------- | ------------- |
-| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
-
+| sign in with apple  | display saved solution  | tapped date and transfer to CompassionView  | do self-compassion  |
+|||||
 
