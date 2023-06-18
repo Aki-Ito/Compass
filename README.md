@@ -24,10 +24,10 @@ I manage libraries by using SPM(Swift Package Manager)
 |     Add solution     | FeaturedView  |   Calendar    |  Compassion   |
 | :-------------: | :-------------: | :-------------: | :-------------: |
 | mental solution  | display saved solution  | tapped date and transfer to CompassionView  | do self-compassion  |
-||<img src="https://github.com/Aki-Ito/SC/assets/60352606/a5057492-eec4-436b-a10c-d7af9abc4a32" width="150">|<img src="https://github.com/Aki-Ito/SC/assets/60352606/02bec4ea-f0c9-4050-8267-83cb688d6aad" width="150">||
+|<img src="https://github.com/Aki-Ito/SC/assets/60352606/828e2693-4734-4f37-bc4d-13b7731ae11d" width="150">|<img src="https://github.com/Aki-Ito/SC/assets/60352606/a5057492-eec4-436b-a10c-d7af9abc4a32" width="150">|<img src="https://github.com/Aki-Ito/SC/assets/60352606/02bec4ea-f0c9-4050-8267-83cb688d6aad" width="150">|<img src="https://github.com/Aki-Ito/SC/assets/60352606/8eb34b76-44f8-4b9f-bf36-e9ff842f8eb6" width="150">|
 
 
-<img src="" width="150">
-<img src="" width="150">
-<div style="text-align: center;">
-</div>
+<img src="https://github.com/Aki-Ito/SC/assets/60352606/828e2693-4734-4f37-bc4d-13b7731ae11d" width="150">
+<img src="https://github.com/Aki-Ito/SC/assets/60352606/8eb34b76-44f8-4b9f-bf36-e9ff842f8eb6" width="150">
+<img width="404" alt="スクリーンショット 2023-06-18 20 11 53" src="https://github.com/Aki-Ito/SC/assets/60352606/828e2693-4734-4f37-bc4d-13b7731ae11d">
+<img width="404" alt="スクリーンショット 2023-06-18 20 12 29" src="https://github.com/Aki-Ito/SC/assets/60352606/8eb34b76-44f8-4b9f-bf36-e9ff842f8eb6">
