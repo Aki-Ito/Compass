@@ -24,7 +24,7 @@ I manage libraries by using SPM(Swift Package Manager)
 |     Add solution     | FeaturedView  |   Calendar    |  Compassion   |
 | :-------------: | :-------------: | :-------------: | :-------------: |
 | mental solution  | display saved solution  | tapped date and transfer to CompassionView  | do self-compassion  |
-|<img src="https://github.com/Aki-Ito/SC/assets/60352606/3d595683-bcd6-4126-ab3c-49ffbc7211e8" width="150">|<img src="" width="150">|<img src="https://github.com/Aki-Ito/SC/assets/60352606/73e4a1a5-22e2-4a40-ba33-995bf674d941" width="150">|<img src="https://github.com/Aki-Ito/SC/assets/60352606/f9cf27c2-19f9-41e5-94e8-978f1b5d03e6" width="150">|
+|<img src="https://github.com/Aki-Ito/SC/assets/60352606/3d595683-bcd6-4126-ab3c-49ffbc7211e8" width="150">|<img src="https://github.com/Aki-Ito/SC/assets/60352606/f9cf27c2-19f9-41e5-94e8-978f1b5d03e6" width="150">|<img src="https://github.com/Aki-Ito/SC/assets/60352606/73e4a1a5-22e2-4a40-ba33-995bf674d941" width="150">|<img src="https://github.com/Aki-Ito/SC/assets/60352606/f9cf27c2-19f9-41e5-94e8-978f1b5d03e6" width="150">|
 
 ## Technology used
 - SwiftUI
