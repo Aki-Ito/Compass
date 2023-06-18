@@ -24,7 +24,7 @@ I manage libraries by using SPM(Swift Package Manager)
 |     login     | FeaturedView  |   Calendar    |  Compassion   |
 | ------------- | ------------- | ------------- | ------------- |
 | sign in with apple  | display saved solution  | tapped date and transfer to CompassionView  | do self-compassion  |
-||<div style="text-align: center;"><img src="https://github.com/Aki-Ito/SC/assets/60352606/a5057492-eec4-436b-a10c-d7af9abc4a32" width="150"></div>|<div style="text-align: center;"><img src="https://github.com/Aki-Ito/SC/assets/60352606/02bec4ea-f0c9-4050-8267-83cb688d6aad" width="150"></div>||
+||<img src="https://github.com/Aki-Ito/SC/assets/60352606/a5057492-eec4-436b-a10c-d7af9abc4a32" width="150">|<img src="https://github.com/Aki-Ito/SC/assets/60352606/02bec4ea-f0c9-4050-8267-83cb688d6aad" width="150">||
 
 
 <img src="" width="150">
