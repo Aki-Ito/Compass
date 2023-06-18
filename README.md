@@ -20,3 +20,9 @@ I manage libraries by using SPM(Swift Package Manager)
 - Firebase Authentication
 - Firebase Storage
 
+## Easy usage
+| ----login---- | FeaturedView  | --Calendar--  | -Compassion-- |
+| ------------- | ------------- | ------------- | ------------- |
+| Content Cell  | Content Cell  | Content Cell  | Content Cell  |
+
+
