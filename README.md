@@ -26,3 +26,4 @@ I manage libraries by using SPM(Swift Package Manager)
 | sign in with apple  | display saved solution  | tapped date and transfer to CompassionView  | do self-compassion  |
 |||||
 
+<img src="" width="150">
