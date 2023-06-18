@@ -21,7 +21,7 @@ I manage libraries by using SPM(Swift Package Manager)
 - Firebase Storage
 
 ## Easy usage
-| ----login---- | FeaturedView  | --Calendar--  | -Compassion-- |
+|     login     | FeaturedView  |   Calendar    |  Compassion   |
 | ------------- | ------------- | ------------- | ------------- |
 | Content Cell  | Content Cell  | Content Cell  | Content Cell  |
 
