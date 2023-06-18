@@ -7,11 +7,6 @@ Compass is the application that we can use for self-compassion & mental stabilit
 <img src="https://github.com/Aki-Ito/SC/assets/60352606/e4f20830-11e1-4748-b5b9-880cabcb9f49" width="150">
 <img src="https://github.com/Aki-Ito/SC/assets/60352606/2b137ca7-8101-4297-b7ad-4ac5ba00459d" width="150">
 </p>
-![image1](https://github.com/Aki-Ito/SC/assets/60352606/a5bf5c37-7f1a-47fa-97bd-4c5abe3f325e)
-![image2](https://github.com/Aki-Ito/SC/assets/60352606/fe2ea110-3a5a-42aa-a3b3-36d5b4193e53)
-![image3](https://github.com/Aki-Ito/SC/assets/60352606/455e22e8-86ee-422b-b0f4-3ce13e2c8ba3)
-![image4](https://github.com/Aki-Ito/SC/assets/60352606/e4f20830-11e1-4748-b5b9-880cabcb9f49)
-![image5](https://github.com/Aki-Ito/SC/assets/60352606/2b137ca7-8101-4297-b7ad-4ac5ba00459d)
 
 ## Environment
 - Language：Swift
