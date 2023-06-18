@@ -1,2 +1,1 @@
-# SC
-SC app
+# Compass(AppName)
