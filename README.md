@@ -1,1 +1,1 @@
-# Compass(AppName)
+# Compass
