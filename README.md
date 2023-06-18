@@ -7,6 +7,6 @@
 
 ## Library
 I manage libraries by using SPM(Swift Package Manager)
-Firebase Cloud Firestore
-Firebase Authentication
-Firebase Storage
+- Firebase Cloud Firestore
+- Firebase Authentication
+- Firebase Storage
