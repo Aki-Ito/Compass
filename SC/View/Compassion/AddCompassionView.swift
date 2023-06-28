@@ -89,7 +89,7 @@ struct AddCompassionView: View {
                                         .blur(radius: 10)
                                 )
                                 .frame(width: 80, height: 80)
-                                .shadow(color: Color("CirclePink1"),radius: textState == .selfkindness ? 10 : 0)
+                                .shadow(color: Color("CirclePink1"),radius: textState == .selfkindness ? 20 : 0)
                             
                             Image("heart")
                                 .resizable()
@@ -123,7 +123,7 @@ struct AddCompassionView: View {
                                         .blur(radius: 10)
                                 )
                                 .frame(width: 80, height: 80)
-                                .shadow(color: Color("CirclePink1"),radius: textState == .commonHumanity ? 10 : 0)
+                                .shadow(color: Color("CirclePink1"),radius: textState == .commonHumanity ? 20 : 0)
                             
                             Image("circle")
                                 .resizable()
@@ -157,7 +157,7 @@ struct AddCompassionView: View {
                                         .blur(radius: 10)
                                 )
                                 .frame(width: 80, height: 80)
-                                .shadow(color: Color("CirclePink1"), radius: textState == .mindfullness ? 10 : 0)
+                                .shadow(color: Color("CirclePink1"), radius: textState == .mindfullness ? 20 : 0)
                             Image("mindfullness")
                                 .resizable()
                                 .frame(width: 70, height: 70)
@@ -178,88 +178,6 @@ struct AddCompassionView: View {
                 ))
         }
     }
-    
-    //    @ViewBuilder
-    //    func CompassionView() -> some View{
-    //        VStack{
-    //            HStack{
-    //                Text("Selfkindness")
-    //                    .font(.title2)
-    //                Spacer()
-    //            }
-    //            TextEditor(text: $selfkindness)
-    //                .scrollContentBackground(Visibility.hidden)
-    //                .padding()
-    //                .frame(height: 150)
-    //                .background(RoundedRectangle(cornerRadius: 10).stroke(
-    //                    Color("CirclePink1")
-    //                ))
-    //                .focused(self.$focus)
-    //                .toolbar{
-    //                    ToolbarItem(placement: .keyboard){
-    //                        HStack{
-    //                            Spacer()
-    //                            Button("Close"){
-    //                                self.focus = false
-    //                            }
-    //                            .foregroundColor(Color("CirclePink1"))
-    //                        }
-    //                    }
-    //                }
-    //
-    //            HStack{
-    //                Text("commonHumanity")
-    //                    .font(.title3)
-    //                Spacer()
-    //            }
-    //
-    //            TextEditor(text: $commonHumanity)
-    //                .scrollContentBackground(Visibility.hidden)
-    //                .padding()
-    //                .frame(height: 150)
-    //                .background(RoundedRectangle(cornerRadius: 10).stroke(
-    //                    Color("CirclePink1")
-    //                ))
-    //                .focused(self.$focus)
-    //                .toolbar{
-    //                    ToolbarItem(placement: .keyboard){
-    //                        HStack{
-    //                            Spacer()
-    //                            Button("Close"){
-    //                                self.focus = false
-    //                            }
-    //                            .foregroundColor(Color("CirclePink1"))
-    //                        }
-    //                    }
-    //                }
-    //
-    //            HStack{
-    //                Text("mindfullness")
-    //                    .font(.title2)
-    //                Spacer()
-    //            }
-    //
-    //            TextEditor(text: $mindfullness)
-    //                .scrollContentBackground(Visibility.hidden)
-    //                .padding()
-    //                .frame(height: 150)
-    //                .background(RoundedRectangle(cornerRadius: 10).stroke(
-    //                    Color("CirclePink1")
-    //                ))
-    //                .focused(self.$focus)
-    //                .toolbar{
-    //                    ToolbarItem(placement: .keyboard){
-    //                        HStack{
-    //                            Spacer()
-    //                            Button("Close"){
-    //                                self.focus = false
-    //                            }
-    //                            .foregroundColor(Color("CirclePink1"))
-    //                        }
-    //                    }
-    //                }
-    //        }.padding()
-    //    }
 }
 
 struct AddCompassionView_Previews: PreviewProvider {
