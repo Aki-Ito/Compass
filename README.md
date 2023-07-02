@@ -1,5 +1,5 @@
 # Compass
-Compass is the application that we can use for self-compassion & mental stability. 
+Compass is the application that we can use for self-compassion & mental stability.  
 Self-compassion means compassion for oneself, caring for oneself as one cares for others.
 <p>
 <img src="https://github.com/Aki-Ito/SC/blob/main/image1.jpeg" width="150">
