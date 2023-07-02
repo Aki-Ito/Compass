@@ -118,26 +118,26 @@ struct EditAccountView: View {
                     .background(.clear)
                     .scrollContentBackground(.hidden)
                 }
+                .navigationTitle("Account")
+                .toolbar {
+                    ToolbarItem {
+                        Button("save") {
+                            self.showingAlert = true
+                        }
+                        .alert(isPresented: $showingAlert) {
+                            Alert(title: Text("Save?"),dismissButton: .default(Text("OK"),action: {
+                                Task{
+                                    try await viewModel.editUserInfo(userName: text)
+                                    if image != nil{
+                                        try await viewModel.editImage(imageData: image!.jpegData(compressionQuality: 0.2)!)
+                                    }
+                                }
+                            }))
+                        }
+                    }
+                }
                 if showingIndicator {
                     ActivityIndicatorHelper()
-                }
-            }
-            .navigationTitle("Account")
-            .toolbar {
-                ToolbarItem {
-                    Button("save") {
-                        self.showingAlert = true
-                    }
-                    .alert(isPresented: $showingAlert) {
-                        Alert(title: Text("Save?"),dismissButton: .default(Text("OK"),action: {
-                            Task{
-                                try await viewModel.editUserInfo(userName: text)
-                                if image != nil{
-                                    try await viewModel.editImage(imageData: image!.jpegData(compressionQuality: 0.2)!)
-                                }
-                            }
-                        }))
-                    }
                 }
             }
         }
