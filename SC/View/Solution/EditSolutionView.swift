@@ -96,7 +96,7 @@ struct EditSolutionView: View {
             HStack{
                 Text("Solution")
                     .font(.title2)
-                Text("using chatGPT")
+                Text("write the solution")
                     .foregroundColor(.gray)
                 Spacer()
             }
