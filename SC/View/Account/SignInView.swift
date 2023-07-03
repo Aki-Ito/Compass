@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignInView: View {
-    let characters: Array<String.Element> = Array("Compass")
+    let characters: Array<String.Element> = Array("Compás")
     @State var opacity = 0.0
     @State var blurValue: Double = 10
     @ObservedObject private var signInWithAppleObject = SignInWithAppleRepository()
