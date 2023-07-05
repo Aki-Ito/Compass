@@ -104,7 +104,7 @@ struct EditAccountView: View {
                                 self.showingDeleteAlert = true
                             }
                             .alert(isPresented: $showingDeleteAlert) {
-                                Alert(title: Text("delete?"),primaryButton:.cancel(Text("cancel").foregroundColor(Color("CirclePink1"))     ),secondaryButton: .destructive(Text("OK"),action: {
+                                Alert(title: Text("delete?"),message:Text("A pop-up will appear and you will be asked to log in. The user will then be deleted.") ,primaryButton:.cancel(Text("cancel").foregroundColor(Color("CirclePink1"))     ),secondaryButton: .destructive(Text("OK"),action: {
                                     //MARK: access viewModel
                                     Task{
                                         signInWithAppleObject.deleteCurrentUser()
