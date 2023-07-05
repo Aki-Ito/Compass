@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabBarView: View {
+    @EnvironmentObject var tabHelper: TabBarHelper
     @State var currentTab: Tab = .solution
     @Namespace var animation
     var body: some View {
@@ -58,13 +59,16 @@ struct TabBarView: View {
                 }
             }
         }
+        //MARK: tab height
+        .frame(height: 60)
         .padding(.horizontal)
-        .padding(.bottom, 10)
+        .padding(.bottom, 20)
     }
 }
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
         TabBarView()
+            .environmentObject(TabBarHelper())
     }
 }

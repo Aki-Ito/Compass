@@ -14,6 +14,7 @@ class CalendarViewModel: ObservableObject, Identifiable{
     
     @Published var dateComponents: DateComponents?
     @Published var isShowing: Bool = false
+    @Published var allData:[CalendarModel] = []
     
     private var cancellables: Set<AnyCancellable> = []
     
@@ -48,6 +49,17 @@ class CalendarViewModel: ObservableObject, Identifiable{
         do{
             guard let data = try await CalendarModel.fetchData(createdAt: createdAt) else {return nil}
             return data
+        }catch{
+            throw error
+        }
+    }
+    
+    @MainActor
+    func fetchAllDiary() async throws -> [CalendarModel]{
+        do{
+            let data = try await CalendarModel.fetchAllData()
+            self.allData = data
+           return data
         }catch{
             throw error
         }

@@ -54,4 +54,19 @@ extension CalendarModel{
             throw error
         }
     }
+    
+    static func fetchAllData() async throws -> [CalendarModel]{
+        do{
+            let db = Firestore.firestore()
+            guard let uid = Auth.auth().currentUser?.uid else {return []}
+            let compassionAllRef = db.collection("users").document(uid).collection("diaries")
+            let querySnapshot = try await compassionAllRef.getDocuments()
+            let returnedArray: [CalendarModel] = try querySnapshot.documents.map {
+              try  $0.data(as: CalendarModel.self)
+            }
+            return returnedArray
+        }catch{
+            throw error
+        }
+    }
 }

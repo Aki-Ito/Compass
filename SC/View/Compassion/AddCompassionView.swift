@@ -172,7 +172,7 @@ struct AddCompassionView: View {
             TextEditor(text: $editText)
                 .scrollContentBackground(Visibility.hidden)
                 .padding()
-                .frame(height: 400)
+                .frame(minHeight: 150)
                 .background(RoundedRectangle(cornerRadius: 10).stroke(
                     Color("CirclePink1")
                 ))

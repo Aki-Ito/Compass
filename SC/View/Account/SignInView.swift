@@ -39,6 +39,7 @@ struct SignInView: View {
                 })
                 .fullScreenCover(isPresented: $signInWithAppleObject.isShow) {
                     TabBarView()
+                        .environmentObject(TabBarHelper())
                 }
                 .padding(EdgeInsets(top: 20, leading: 40, bottom: 60, trailing: 40))
             }

@@ -11,26 +11,37 @@ struct CompassionCalendarView: View {
     @StateObject private var viewModel: CalendarViewModel = .init()
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
+    
     var body: some View {
         NavigationStack{
             ZStack {
                 SCBackgroundView()
                     .ignoresSafeArea()
-                VStack {
-                    HStack{
-                        Text("select date and do self compassion")
-                            .frame(alignment: .leading)
-                            .foregroundColor(.gray)
-                            .padding(EdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 0))
-                        Spacer()
+                GeometryReader{geometry in
+                    VStack {
+                        HStack{
+                            Text("select date and do self compassion")
+                                .frame(alignment: .leading)
+                                .foregroundColor(.gray)
+                                .padding(EdgeInsets(top: 0, leading: 20, bottom: 20, trailing: 0))
+                            Spacer()
+                        }
+                        .frame(width: geometry.size.width,height: geometry.size.height/9)
+                        .padding(.bottom)
+                        CalendarView(didSelectDateSubject: viewModel.didSelectDateSubject, judgeShowingAddViewSubject: viewModel.isShowingAddView)
+                            .frame(width: geometry.size.width, height: geometry.size.height/9*7)
+                            .padding(.bottom)
                     }
-                    CalendarView(didSelectDateSubject: viewModel.didSelectDateSubject, judgeShowingAddViewSubject: viewModel.isShowingAddView)
                 }
             }
             .navigationTitle("Calendar")
             .sheet(isPresented: $viewModel.isShowing) {
                 AddCompassionView(dateComponents: viewModel.dateComponents!)
                     .presentationDetents([.height(screenHeight*0.8)])
+            }
+        }.onAppear{
+            Task{
+                try await viewModel.fetchAllDiary()
             }
         }
     }

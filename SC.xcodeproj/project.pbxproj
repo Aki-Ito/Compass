@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1AE0FD2A5547320019D435 /* TabBarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1AE0FC2A5547320019D435 /* TabBarHelper.swift */; };
+		2C1AE0FF2A5556580019D435 /* BarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1AE0FE2A5556580019D435 /* BarHelper.swift */; };
 		2C4079CD2A349E9600B2E90A /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4079CC2A349E9600B2E90A /* KeyboardObserver.swift */; };
 		2C4079F12A35A29C00B2E90A /* EditAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4079F02A35A29C00B2E90A /* EditAccountView.swift */; };
 		2C4079F52A36A17900B2E90A /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4079F42A36A17900B2E90A /* ImagePickerView.swift */; };
@@ -49,6 +51,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C1AE0FC2A5547320019D435 /* TabBarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHelper.swift; sourceTree = "<group>"; };
+		2C1AE0FE2A5556580019D435 /* BarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarHelper.swift; sourceTree = "<group>"; };
 		2C4079CC2A349E9600B2E90A /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
 		2C4079F02A35A29C00B2E90A /* EditAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountView.swift; sourceTree = "<group>"; };
 		2C4079F42A36A17900B2E90A /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				2C90488E2A325D6D005A9F4E /* DateFormatHelper.swift */,
 				2C4079CC2A349E9600B2E90A /* KeyboardObserver.swift */,
 				2C909CBF2A3D82AD00423396 /* ActivityIndicatorHelper.swift */,
+				2C1AE0FC2A5547320019D435 /* TabBarHelper.swift */,
+				2C1AE0FE2A5556580019D435 /* BarHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -391,7 +397,9 @@
 				2C9900A92A22448000CDD4BC /* SignInView.swift in Sources */,
 				2C82567B2A0CC03B002C31F9 /* ContentView.swift in Sources */,
 				2CD037E72A1E819C00C3B4C7 /* FetchSCViewModel.swift in Sources */,
+				2C1AE0FD2A5547320019D435 /* TabBarHelper.swift in Sources */,
 				2CA0EDEE2A0FE2A400653D05 /* FeaturedView.swift in Sources */,
+				2C1AE0FF2A5556580019D435 /* BarHelper.swift in Sources */,
 				2C4079F52A36A17900B2E90A /* ImagePickerView.swift in Sources */,
 				2CD037E32A1D1DDA00C3B4C7 /* SolutionModel.swift in Sources */,
 				2CD037D22A1D199300C3B4C7 /* AddSCViewModel.swift in Sources */,
