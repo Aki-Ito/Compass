@@ -7,79 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "86E85B28-8A10-428B-BFC6-BCD9A7C1412A"
+            uuid = "4A2E9DC2-9142-4650-819F-9128FAFF8E94"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SC/View/Compassion/CompassionCalendarView.swift"
+            filePath = "SC/View/Compassion/CalendarView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "86E85B28-8A10-428B-BFC6-BCD9A7C1412A - c0e156a6e20d6dad"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async throws -&gt; Swift.Array&lt;SC.CalendarModel&gt; in closure #2 () -&gt; () in SC.CompassionCalendarView.body.getter : some"
-                  moduleName = "SC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/View/Compassion/CompassionCalendarView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  uuid = "86E85B28-8A10-428B-BFC6-BCD9A7C1412A - 65bd2e7080eceef6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async throws -&gt; Swift.Array&lt;SC.CalendarModel&gt; in closure #2 () -&gt; () in SC.CompassionCalendarView.body.getter : some"
-                  moduleName = "SC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/View/Compassion/CompassionCalendarView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "86E85B28-8A10-428B-BFC6-BCD9A7C1412A - fa62f43785b7d1af"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async throws -&gt; Swift.Array&lt;SC.CalendarModel&gt; in closure #2 () -&gt; () in SC.CompassionCalendarView.body.getter : some"
-                  moduleName = "SC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/View/Compassion/CompassionCalendarView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  uuid = "86E85B28-8A10-428B-BFC6-BCD9A7C1412A - e0a34b7c0a9b77a0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async throws -&gt; Swift.Array&lt;SC.CalendarModel&gt; in closure #2 () -&gt; () in SC.CompassionCalendarView.body.getter : some"
-                  moduleName = "SC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/View/Compassion/CompassionCalendarView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "updateUIView(_:context:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

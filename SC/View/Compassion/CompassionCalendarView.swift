@@ -42,6 +42,7 @@ struct CompassionCalendarView: View {
         }.onAppear{
             Task{
                 try await viewModel.fetchAllDiary()
+                try await viewModel.makeDateComponentsArray()
             }
         }
     }

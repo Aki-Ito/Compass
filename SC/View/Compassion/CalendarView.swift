@@ -13,7 +13,8 @@ import Combine
 struct CalendarView: UIViewRepresentable {
     private var didSelectDateSubject: PassthroughSubject<DateComponents, Never>
     private var judgeShowingAddViewSubject: PassthroughSubject<Bool, Never>
-    @State var allData: [CalendarModel] = []
+    @State var dateComponentsArray: [DateComponents] = []
+    @State var allData:[CalendarModel] = []
     @ObservedObject var viewModel: CalendarViewModel = .init()
     private var dateformatter = DateFormatHelper.shared
     
@@ -41,6 +42,9 @@ struct CalendarView: UIViewRepresentable {
     func updateUIView(_ uiView: UIViewType, context: Context) {
         Task{
             do{
+                //FIXME: 処理は走っているがbreakpointで一生止まっている。
+                //FIXME: Thread 1: "Attempted to reconfigure item identifier that does not exist in the snapshot: <_UIDatePickerCalendarDay: 0x600003046a90; components: 1-2023-6-28; month: <_UIDatePickerCalendarMonth: 0x600003046f70; calendar: <__NSCFCalendar: 0x600001cc41e0>; components: 1-2023-6>; assignedMonth: (null)>"
+                //firestoreのコンソールに変なデータがある説
                 allData = try await viewModel.fetchAllDiary()
             }catch{
                 throw error
@@ -60,6 +64,7 @@ struct CalendarView: UIViewRepresentable {
         @ObservedObject var viewModel: CalendarViewModel = .init()
         private var parent: CalendarView
         private var allData: [CalendarModel] = []
+        private var dateComponentsArray: [DateComponents] = []
         private var dateformatter = DateFormatHelper.shared
         
         init(_ parent: CalendarView) {
@@ -81,9 +86,9 @@ struct CalendarView: UIViewRepresentable {
                     throw error
                 }
             }
-            
+
             guard let date = dateComponents.date else {return nil}
-            
+
             for data in allData{
                 if data.id == dateformatter.dateFormat(date: date){
                     return .image(UIImage(systemName: "book"),color: UIColor(named: "CirclePink1"),size: .large)

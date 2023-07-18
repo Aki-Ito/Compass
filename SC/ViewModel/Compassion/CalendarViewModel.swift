@@ -11,6 +11,7 @@ import FirebaseFirestore
 class CalendarViewModel: ObservableObject, Identifiable{
     private(set) var didSelectDateSubject: PassthroughSubject<DateComponents, Never> = .init()
     private(set) var isShowingAddView: PassthroughSubject<Bool, Never> = .init()
+    private var dateformatter = DateFormatHelper.shared
     
     @Published var dateComponents: DateComponents?
     @Published var isShowing: Bool = false
@@ -59,7 +60,23 @@ class CalendarViewModel: ObservableObject, Identifiable{
         do{
             let data = try await CalendarModel.fetchAllData()
             self.allData = data
-           return data
+            return data
+        }catch{
+            throw error
+        }
+    }
+    
+    @MainActor
+    public func makeDateComponentsArray() async throws -> [DateComponents]{
+        do{
+            let allCompassionData = try await CalendarModel.fetchAllData()
+            let dateComponentsArray = allCompassionData.map { data in
+                let id = data.id
+                let date = dateformatter.stringToDate(string: id!)
+                let timeZone =  TimeZone(identifier: "Asia/Tokyo")
+                return Calendar.current.dateComponents(in: timeZone!, from: date)
+            }
+            return dateComponentsArray
         }catch{
             throw error
         }
