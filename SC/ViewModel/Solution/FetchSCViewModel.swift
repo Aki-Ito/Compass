@@ -11,19 +11,19 @@ class FetchSCViewModel: ObservableObject{
     @Published var solutions: [SolutionModel] = []
     
     @MainActor
-    func fetchSolutions() async throws{
+   public func fetchSolutions() async throws{
         let solutions = try await SolutionModel.fetchSolution()
         self.solutions = solutions
     }
     
     @MainActor
-    func fetchFeaturedSolutions() async throws{
+   public func fetchFeaturedSolutions() async throws{
         let featuredSolutions = try await SolutionModel.fetchFeaturedSolution()
         self.solutions = featuredSolutions
     }
     
     @MainActor
-    func fetchExploredSolutions(text: String) async throws{
+   public func fetchExploredSolutions(text: String) async throws{
         if text.isEmpty{
             self.solutions = try await SolutionModel.fetchFeaturedSolution()
         }else{

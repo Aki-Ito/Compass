@@ -41,12 +41,12 @@ class CalendarViewModel: ObservableObject, Identifiable{
             .store(in: &cancellables)
     }
     
-    func addDiary(selfkindness: String, commonHumanity: String, mindfullness: String, date: Date) async throws {
+    public func addDiary(selfkindness: String, commonHumanity: String, mindfullness: String, date: Date) async throws {
         
         try await CalendarModel.addData(selfkindness: selfkindness, commonHumanity: commonHumanity, mindfullness: mindfullness, createdAt: Timestamp(date: date))
     }
     
-    func fetchDiary(createdAt: DateComponents) async throws -> CalendarModel?{
+    public func fetchDiary(createdAt: DateComponents) async throws -> CalendarModel?{
         do{
             guard let data = try await CalendarModel.fetchData(createdAt: createdAt) else {return nil}
             return data
@@ -56,7 +56,7 @@ class CalendarViewModel: ObservableObject, Identifiable{
     }
     
     @MainActor
-    func fetchAllDiary() async throws -> [CalendarModel]{
+    public func fetchAllDiary() async throws -> [CalendarModel]{
         do{
             let data = try await CalendarModel.fetchAllData()
             self.allData = data

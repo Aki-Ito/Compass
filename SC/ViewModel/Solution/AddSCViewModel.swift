@@ -13,17 +13,17 @@ import FirebaseFirestoreSwift
 
 class AddSCViewModel: ObservableObject{
     
-    func addSolution(problem: String, solution: String, createAt: Date, importance: Int) async throws{
+    public func addSolution(problem: String, solution: String, createAt: Date, importance: Int) async throws{
         let createAtTimeStamp: Timestamp = Timestamp(date: createAt)
         let contents = SolutionModel(problem: problem, solution: solution, importance: importance, createdAt: createAtTimeStamp)
         try await SolutionModel.addSolution(solution: contents)
     }
     
-    func editSolution(problem: String, solution: String, importance: Int, id: String) async throws{
+    public func editSolution(problem: String, solution: String, importance: Int, id: String) async throws{
         try await SolutionModel.editSolution(id: id, problem: problem, solution: solution, importance: importance)
     }
     
-    func deleteSolution(id: String) async throws{
+    public func deleteSolution(id: String) async throws{
         try await SolutionModel.deleteSolution(id: id)
     }
 }

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum CompassionEnum: CaseIterable{
+public enum CompassionEnum: CaseIterable{
     case selfkindness
     case commonHumanity
     case mindfullness

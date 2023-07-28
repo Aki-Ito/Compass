@@ -12,7 +12,7 @@ import FirebaseFirestoreSwift
 import FirebaseStorage
 import AuthenticationServices
 
-class Account: Codable,Identifiable{
+public struct Account: Codable,Identifiable{
     @DocumentID public var id: String?
     var userName: String = ""
     var userUid: String

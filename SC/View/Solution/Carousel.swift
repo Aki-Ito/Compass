@@ -50,6 +50,7 @@ struct Carousel<Content: View,Item,ID>: View where Item: RandomAccessCollection,
                         .rotationEffect(.init(degrees: Double(index) * 5),anchor: .bottom)
                         .rotationEffect(.init(degrees: rotation), anchor: .bottom)
                     //MARK: Apply After Rotation, Thus you will get smooth effect
+                    //セルの高さを調節しているため、原因ではなさそう
                         .offset(y: offsetY(index: index, cardWidth: cardWidth))
                         .frame(width: size.width - cardPadding, height: size.height)
                         .contentShape(Rectangle())

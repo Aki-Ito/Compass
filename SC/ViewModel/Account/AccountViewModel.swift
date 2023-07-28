@@ -10,31 +10,31 @@ class AccountViewModel: ObservableObject{
     @Published var account: Account?
     @Published var image: Data?
     
-    func editUserInfo(userName: String) async throws{
+    public func editUserInfo(userName: String) async throws{
         try await Account.editUser(userName: userName)
     }
     
-    func editImage(imageData: Data) async throws{
+    public func editImage(imageData: Data) async throws{
         try await Account.uploadImage(data: imageData)
     }
     
     @MainActor
-    func fetchUserInfo() async throws{
+    public func fetchUserInfo() async throws{
         let data = try await Account.fetchUser()
         self.account = data
     }
     
     @MainActor
-    func fetchImage() async throws{
+    public func fetchImage() async throws{
         let image = try await Account.fetchImage()
         self.image = image
     }
     
-    func logOut() async throws{
+    public func logOut() async throws{
         try await Account.logoutUser()
     }
     
-    func deleteUser() async throws{
+    public func deleteUser() async throws{
         try await Account.deleteUser()
     }
 }
