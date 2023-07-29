@@ -17,6 +17,7 @@ struct Carousel<Content: View,Item,ID>: View where Item: RandomAccessCollection,
     var cardPadding: CGFloat
     var items: Item
     @Binding var index: Int
+    @StateObject var controlCellIndexRepository = ControlCellIndexRepository()
     
     init(index: Binding<Int>,items: Item,spacing: CGFloat = 30, cardPadding: CGFloat = 80, id: KeyPath<Item.Element, ID>,content: @escaping (Item.Element, CGSize) -> Content) {
         self.content = content
@@ -41,9 +42,9 @@ struct Carousel<Content: View,Item,ID>: View where Item: RandomAccessCollection,
             
             let cardWidth = size.width - (cardPadding - spacing)
             LazyHStack(spacing: spacing){
-                ForEach(items, id: id){movie in
-                    let index = indexOf(item: movie)
-                    content(movie, CGSize(width: size.width - cardPadding, height: size.height))
+                ForEach(items, id: id){solution in
+                    let index = indexOf(item: solution)
+                    content(solution, CGSize(width: size.width - cardPadding, height: size.height))
                     
                     //MARK: Rotating Each View 5 Deg Multiplied With it's Index
                     //All While Scrolling Setting it to 0, thus it will give some nice Circular Carousel Effect
@@ -71,8 +72,11 @@ struct Carousel<Content: View,Item,ID>: View where Item: RandomAccessCollection,
         .padding(.top,60)
         .onAppear{
             let extraSpace = (cardPadding/2) - spacing
-            offset = extraSpace
-            lastStoredOffset = extraSpace
+            offset = controlCellIndexRepository.offSet ?? extraSpace
+            lastStoredOffset = controlCellIndexRepository.offSet ?? extraSpace
+        }
+        .onDisappear{
+            controlCellIndexRepository.offSet = self.offset
         }
         .animation(.easeInOut, value: translation == 0)
     }

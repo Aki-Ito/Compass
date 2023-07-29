@@ -13,6 +13,7 @@ struct FeaturedView: View {
     @State var currentIndex: Int = 0
     @StateObject var solutionViewModel = FetchSCViewModel()
     @StateObject var accountViewModel = AccountViewModel()
+    @StateObject var controlCellIndexRepository = ControlCellIndexRepository()
     
     var body: some View {
         NavigationStack {
@@ -75,11 +76,15 @@ struct FeaturedView: View {
             }
         }
         .onAppear{
+            currentIndex = controlCellIndexRepository.currentIndex ?? 0
             Task{
                 try await solutionViewModel.fetchFeaturedSolutions()
                 try await accountViewModel.fetchUserInfo()
                 try await accountViewModel.fetchImage()
             }
+        }
+        .onDisappear{
+            controlCellIndexRepository.currentIndex = currentIndex
         }
     }
     

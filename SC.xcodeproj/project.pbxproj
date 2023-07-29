@@ -48,6 +48,7 @@
 		2CD037E72A1E819C00C3B4C7 /* FetchSCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD037E62A1E819C00C3B4C7 /* FetchSCViewModel.swift */; };
 		2CD54B582A2DE44900966D39 /* CompassionCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD54B572A2DE44900966D39 /* CompassionCalendarView.swift */; };
 		2CD54B5A2A2DE4D100966D39 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD54B592A2DE4D100966D39 /* CalendarView.swift */; };
+		2CEC74CC2A7412040020DE68 /* ControlCellIndexRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEC74CB2A7412040020DE68 /* ControlCellIndexRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		2CD037E62A1E819C00C3B4C7 /* FetchSCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSCViewModel.swift; sourceTree = "<group>"; };
 		2CD54B572A2DE44900966D39 /* CompassionCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassionCalendarView.swift; sourceTree = "<group>"; };
 		2CD54B592A2DE4D100966D39 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		2CEC74CB2A7412040020DE68 /* ControlCellIndexRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlCellIndexRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				2C9900A42A2240EB00CDD4BC /* SignInWithAppleRepository.swift */,
+				2CEC74CB2A7412040020DE68 /* ControlCellIndexRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				2C1AE0FF2A5556580019D435 /* BarHelper.swift in Sources */,
 				2C4079F52A36A17900B2E90A /* ImagePickerView.swift in Sources */,
 				2CD037E32A1D1DDA00C3B4C7 /* SolutionModel.swift in Sources */,
+				2CEC74CC2A7412040020DE68 /* ControlCellIndexRepository.swift in Sources */,
 				2CD037D22A1D199300C3B4C7 /* AddSCViewModel.swift in Sources */,
 				2C9048562A30B006005A9F4E /* CalendarViewModel.swift in Sources */,
 				2C909CBB2A3B694900423396 /* CompassionEnum.swift in Sources */,
