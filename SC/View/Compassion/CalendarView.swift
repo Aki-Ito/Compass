@@ -14,18 +14,19 @@ struct CalendarView: UIViewRepresentable {
     private var didSelectDateSubject: PassthroughSubject<DateComponents, Never>
     private var judgeShowingAddViewSubject: PassthroughSubject<Bool, Never>
     @State var dateComponentsArray: [DateComponents] = []
-    @State var allData:[CalendarModel] = []
+    var allData:[CalendarModel]
     @ObservedObject var viewModel: CalendarViewModel = .init()
     private var dateformatter = DateFormatHelper.shared
     
     
-    init(didSelectDateSubject: PassthroughSubject<DateComponents, Never>, judgeShowingAddViewSubject: PassthroughSubject<Bool, Never>) {
+    init(didSelectDateSubject: PassthroughSubject<DateComponents, Never>, judgeShowingAddViewSubject: PassthroughSubject<Bool, Never>,allData: [CalendarModel]) {
         self.didSelectDateSubject = didSelectDateSubject
         self.judgeShowingAddViewSubject = judgeShowingAddViewSubject
+        self.allData = allData
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        Coordinator(self, allData: allData)
     }
     
     func makeUIView(context: Context) -> some UIView {
@@ -40,16 +41,6 @@ struct CalendarView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        Task{
-            do{
-                //FIXME: 処理は走っているがbreakpointで一生止まっている。
-                //FIXME: Thread 1: "Attempted to reconfigure item identifier that does not exist in the snapshot: <_UIDatePickerCalendarDay: 0x600003046a90; components: 1-2023-6-28; month: <_UIDatePickerCalendarMonth: 0x600003046f70; calendar: <__NSCFCalendar: 0x600001cc41e0>; components: 1-2023-6>; assignedMonth: (null)>"
-                //firestoreのコンソールに変なデータがある説
-                allData = try await viewModel.fetchAllDiary()
-            }catch{
-                throw error
-            }
-        }
         let dateComponents = allData.map { data in
             let id = data.id
             let date = dateformatter.stringToDate(string: id!)
@@ -63,12 +54,13 @@ struct CalendarView: UIViewRepresentable {
     class Coordinator: NSObject, UICalendarSelectionSingleDateDelegate,UICalendarViewDelegate {
         @ObservedObject var viewModel: CalendarViewModel = .init()
         private var parent: CalendarView
-        private var allData: [CalendarModel] = []
+        private var allData: [CalendarModel]
         private var dateComponentsArray: [DateComponents] = []
         private var dateformatter = DateFormatHelper.shared
         
-        init(_ parent: CalendarView) {
+        init(_ parent: CalendarView, allData: [CalendarModel]) {
             self.parent = parent
+            self.allData = allData
         }
         
         func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {

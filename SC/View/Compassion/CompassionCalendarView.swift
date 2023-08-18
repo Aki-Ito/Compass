@@ -11,6 +11,7 @@ struct CompassionCalendarView: View {
     @StateObject private var viewModel: CalendarViewModel = .init()
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
+    @State var allFetchedData: [CalendarModel] = []
     
     var body: some View {
         NavigationStack{
@@ -28,7 +29,7 @@ struct CompassionCalendarView: View {
                         }
                         .frame(width: geometry.size.width,height: geometry.size.height/9)
                         .padding(.bottom)
-                        CalendarView(didSelectDateSubject: viewModel.didSelectDateSubject, judgeShowingAddViewSubject: viewModel.isShowingAddView)
+                        CalendarView(didSelectDateSubject: viewModel.didSelectDateSubject, judgeShowingAddViewSubject: viewModel.isShowingAddView, allData: allFetchedData)
                             .frame(width: geometry.size.width, height: geometry.size.height/9*7)
                             .padding(.bottom)
                     }
@@ -41,8 +42,12 @@ struct CompassionCalendarView: View {
             }
         }.onAppear{
             Task{
-                try await viewModel.fetchAllDiary()
-                try await viewModel.makeDateComponentsArray()
+                do{
+                    allFetchedData = try await viewModel.fetchAllDiary()
+//                    try await viewModel.makeDateComponentsArray()
+                }catch{
+                    throw error
+                }
             }
         }
     }
