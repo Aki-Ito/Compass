@@ -22,6 +22,7 @@ class CalendarViewModel: ObservableObject, Identifiable{
     init() {
         subscribeDidSelectDate()
         subscribeIsShowing()
+
     }
     
     private func subscribeDidSelectDate() {

@@ -13,20 +13,18 @@ import Combine
 struct CalendarView: UIViewRepresentable {
     private var didSelectDateSubject: PassthroughSubject<DateComponents, Never>
     private var judgeShowingAddViewSubject: PassthroughSubject<Bool, Never>
-    @State var dateComponentsArray: [DateComponents] = []
-    var allData:[CalendarModel]
-    @ObservedObject var viewModel: CalendarViewModel = .init()
+    @Binding var allData: [CalendarModel]
     private var dateformatter = DateFormatHelper.shared
     
     
-    init(didSelectDateSubject: PassthroughSubject<DateComponents, Never>, judgeShowingAddViewSubject: PassthroughSubject<Bool, Never>,allData: [CalendarModel]) {
+    init(didSelectDateSubject: PassthroughSubject<DateComponents, Never>, judgeShowingAddViewSubject: PassthroughSubject<Bool, Never>,allData: Binding<[CalendarModel]>) {
         self.didSelectDateSubject = didSelectDateSubject
         self.judgeShowingAddViewSubject = judgeShowingAddViewSubject
-        self.allData = allData
+        self._allData = allData
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(self, allData: allData)
+        Coordinator(self)
     }
     
     func makeUIView(context: Context) -> some UIView {
@@ -36,31 +34,27 @@ struct CalendarView: UIViewRepresentable {
         calendarView.locale = Locale(identifier: "ja")
         let selection = UICalendarSelectionSingleDate(delegate: context.coordinator)
         calendarView.selectionBehavior = selection
+//        let dateComponents = allData.map { data in
+//            let id = data.id
+//            let date = dateformatter.stringToDate(string: id!)
+//            let timeZone =  TimeZone(identifier: "Asia/Tokyo")
+//            return Calendar.current.dateComponents(in: timeZone!, from: date)
+//        }
         calendarView.reloadDecorations(forDateComponents: [calendarView.visibleDateComponents], animated: true)
         return calendarView
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        let dateComponents = allData.map { data in
-            let id = data.id
-            let date = dateformatter.stringToDate(string: id!)
-            let timeZone =  TimeZone(identifier: "Asia/Tokyo")
-            return Calendar.current.dateComponents(in: timeZone!, from: date)
-        }
         let uiview = uiView as! UICalendarView
-        uiview.reloadDecorations(forDateComponents: dateComponents, animated: true)
+        uiview.reloadDecorations(forDateComponents: [uiview.visibleDateComponents], animated: true)
     }
     
     class Coordinator: NSObject, UICalendarSelectionSingleDateDelegate,UICalendarViewDelegate {
-        @ObservedObject var viewModel: CalendarViewModel = .init()
         private var parent: CalendarView
-        private var allData: [CalendarModel]
-        private var dateComponentsArray: [DateComponents] = []
         private var dateformatter = DateFormatHelper.shared
         
-        init(_ parent: CalendarView, allData: [CalendarModel]) {
+        init(_ parent: CalendarView) {
             self.parent = parent
-            self.allData = allData
         }
         
         func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
@@ -71,20 +65,13 @@ struct CalendarView: UIViewRepresentable {
         }
         
         func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
-            Task{
-                do{
-                    allData = try await viewModel.fetchAllDiary()
-                }catch{
-                    throw error
-                }
-            }
-
             guard let date = dateComponents.date else {return nil}
-
-            for data in allData{
-                if data.id == dateformatter.dateFormat(date: date){
-                    return .image(UIImage(systemName: "book"),color: UIColor(named: "CirclePink1"),size: .large)
-                }
+            
+            let data = parent.allData.filter { data in
+                data.id == dateformatter.dateFormat(date: date)
+            }
+            if data.count > 0{
+                return .image(UIImage(systemName: "book"),color: UIColor(named: "CirclePink1"),size: .large)
             }
             return nil
         }

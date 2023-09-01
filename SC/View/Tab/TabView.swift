@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TabBarView: View {
     @EnvironmentObject var tabHelper: TabBarHelper
+    @StateObject var calendarViewModel = CalendarViewModel()
     @State var currentTab: Tab = .solution
     @Namespace var animation
     var body: some View {

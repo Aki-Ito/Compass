@@ -29,7 +29,7 @@ struct CompassionCalendarView: View {
                         }
                         .frame(width: geometry.size.width,height: geometry.size.height/9)
                         .padding(.bottom)
-                        CalendarView(didSelectDateSubject: viewModel.didSelectDateSubject, judgeShowingAddViewSubject: viewModel.isShowingAddView, allData: allFetchedData)
+                        CalendarView(didSelectDateSubject: viewModel.didSelectDateSubject, judgeShowingAddViewSubject: viewModel.isShowingAddView, allData: $allFetchedData)
                             .frame(width: geometry.size.width, height: geometry.size.height/9*7)
                             .padding(.bottom)
                     }
@@ -44,7 +44,6 @@ struct CompassionCalendarView: View {
             Task{
                 do{
                     allFetchedData = try await viewModel.fetchAllDiary()
-//                    try await viewModel.makeDateComponentsArray()
                 }catch{
                     throw error
                 }
