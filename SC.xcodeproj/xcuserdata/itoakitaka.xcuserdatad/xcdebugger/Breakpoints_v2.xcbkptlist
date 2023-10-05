@@ -14,8 +14,8 @@
             filePath = "SC/View/Compassion/CompassionCalendarView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -78,54 +78,6 @@
                   startingLineNumber = "46"
                   endingLineNumber = "46"
                   offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E18D060B-BD26-4797-BAF4-89F220D08F98"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SC/View/Compassion/CalendarView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "calendarView(_:decorationFor:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E18D060B-BD26-4797-BAF4-89F220D08F98 - 73dbbaf13748fc44"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SC.CalendarView.Coordinator.calendarView(_: __C.UICalendarView, decorationFor: Foundation.DateComponents) -&gt; Swift.Optional&lt;__C.UICalendarViewDecoration&gt;"
-                  moduleName = "SC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/View/Compassion/CalendarView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "512">
-               </Location>
-               <Location
-                  uuid = "E18D060B-BD26-4797-BAF4-89F220D08F98 - e0f9ce21ca55e8fe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (SC.CalendarModel) -&gt; Swift.Bool in SC.CalendarView.Coordinator.calendarView(_: __C.UICalendarView, decorationFor: Foundation.DateComponents) -&gt; Swift.Optional&lt;__C.UICalendarViewDecoration&gt;"
-                  moduleName = "SC"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/View/Compassion/CalendarView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "84">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -206,6 +158,21 @@
                   startingLineNumber = "31"
                   endingLineNumber = "31"
                   offsetFromSymbolStart = "504">
+               </Location>
+               <Location
+                  uuid = "859B1A12-4E76-4720-AC19-3E66B82CBF2A - ff940994210fc15c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SC.CalendarView.makeUIView(context: SwiftUI.UIViewRepresentableContext&lt;SC.CalendarView&gt;) -&gt; some"
+                  moduleName = "SC"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Desktop/iPhone/ios%20sample/SC/SC/View/Compassion/CalendarView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "364">
                </Location>
             </Locations>
          </BreakpointContent>

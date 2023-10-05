@@ -12,6 +12,8 @@
 		2C4079CD2A349E9600B2E90A /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4079CC2A349E9600B2E90A /* KeyboardObserver.swift */; };
 		2C4079F12A35A29C00B2E90A /* EditAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4079F02A35A29C00B2E90A /* EditAccountView.swift */; };
 		2C4079F52A36A17900B2E90A /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4079F42A36A17900B2E90A /* ImagePickerView.swift */; };
+		2C4676A82AA1D24F0058A3D9 /* HostedCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4676A72AA1D24F0058A3D9 /* HostedCalendarViewController.swift */; };
+		2C519CE62ACE476D0026A20B /* CalendarViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C519CE52ACE476D0026A20B /* CalendarViewControllerRepresentable.swift */; };
 		2C8256792A0CC03B002C31F9 /* SCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8256782A0CC03B002C31F9 /* SCApp.swift */; };
 		2C82567B2A0CC03B002C31F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C82567A2A0CC03B002C31F9 /* ContentView.swift */; };
 		2C82567D2A0CC03C002C31F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C82567C2A0CC03C002C31F9 /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 		2C4079CC2A349E9600B2E90A /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
 		2C4079F02A35A29C00B2E90A /* EditAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountView.swift; sourceTree = "<group>"; };
 		2C4079F42A36A17900B2E90A /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		2C4676A72AA1D24F0058A3D9 /* HostedCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedCalendarViewController.swift; sourceTree = "<group>"; };
+		2C519CE52ACE476D0026A20B /* CalendarViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		2C8256752A0CC03B002C31F9 /* SC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C8256782A0CC03B002C31F9 /* SCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCApp.swift; sourceTree = "<group>"; };
 		2C82567A2A0CC03B002C31F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 				2CD54B572A2DE44900966D39 /* CompassionCalendarView.swift */,
 				2CD54B592A2DE4D100966D39 /* CalendarView.swift */,
 				2C9048772A31050A005A9F4E /* AddCompassionView.swift */,
+				2C4676A72AA1D24F0058A3D9 /* HostedCalendarViewController.swift */,
+				2C519CE52ACE476D0026A20B /* CalendarViewControllerRepresentable.swift */,
 			);
 			path = Compassion;
 			sourceTree = "<group>";
@@ -397,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4676A82AA1D24F0058A3D9 /* HostedCalendarViewController.swift in Sources */,
 				2C9900A92A22448000CDD4BC /* SignInView.swift in Sources */,
 				2C82567B2A0CC03B002C31F9 /* ContentView.swift in Sources */,
 				2CD037E72A1E819C00C3B4C7 /* FetchSCViewModel.swift in Sources */,
@@ -421,6 +428,7 @@
 				2C99009E2A22014500CDD4BC /* AccountModel.swift in Sources */,
 				2C90488B2A31BA51005A9F4E /* CalendarModel.swift in Sources */,
 				2CD037C82A192EEF00C3B4C7 /* TabModel.swift in Sources */,
+				2C519CE62ACE476D0026A20B /* CalendarViewControllerRepresentable.swift in Sources */,
 				2C909CC02A3D82AD00423396 /* ActivityIndicatorHelper.swift in Sources */,
 				2CA0EDEA2A0D36A100653D05 /* SCListView.swift in Sources */,
 				2C4079F12A35A29C00B2E90A /* EditAccountView.swift in Sources */,

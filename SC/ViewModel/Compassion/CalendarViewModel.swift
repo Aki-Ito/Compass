@@ -16,13 +16,13 @@ class CalendarViewModel: ObservableObject, Identifiable{
     @Published var dateComponents: DateComponents?
     @Published var isShowing: Bool = false
     @Published var allData:[CalendarModel] = []
+    @Published var filterdData:[CalendarModel] = []
     
     private var cancellables: Set<AnyCancellable> = []
     
     init() {
         subscribeDidSelectDate()
         subscribeIsShowing()
-
     }
     
     private func subscribeDidSelectDate() {
@@ -81,5 +81,12 @@ class CalendarViewModel: ObservableObject, Identifiable{
         }catch{
             throw error
         }
+    }
+    
+    public func filterDataFromCalendar(dateComponents: DateComponents, allData: [CalendarModel]){
+        let fileterdData = allData.filter { data in
+            data.id == dateformatter.dateFormat(date: dateComponents.date!)
+        }
+        self.filterdData = fileterdData
     }
 }

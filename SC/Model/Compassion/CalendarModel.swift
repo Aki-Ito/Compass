@@ -10,7 +10,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-public struct CalendarModel: Codable,Identifiable{
+public struct CalendarModel: Codable,Identifiable,Equatable{
     @DocumentID public var id: String?
     var selfkindness: String
     var commonHumanity: String

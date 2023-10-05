@@ -67,13 +67,14 @@ struct CalendarView: UIViewRepresentable {
         func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
             guard let date = dateComponents.date else {return nil}
             
-            let data = parent.allData.filter { data in
-                data.id == dateformatter.dateFormat(date: date)
+            let containsCalendarData =  parent.allData.contains { calendar in
+                calendar.id == parent.dateformatter.dateFormat(date: date)
             }
-            if data.count > 0{
+            if containsCalendarData{
                 return .image(UIImage(systemName: "book"),color: UIColor(named: "CirclePink1"),size: .large)
+            }else{
+                return nil
             }
-            return nil
         }
     }
 }
