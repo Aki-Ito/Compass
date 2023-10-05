@@ -12,6 +12,7 @@ struct CompassionCalendarView: View {
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     @State var allFetchedData = [CalendarModel]()
+    @State var displayCalendarView: Bool = false
     
     var body: some View {
         NavigationStack{
@@ -29,7 +30,7 @@ struct CompassionCalendarView: View {
                         }
                         .frame(width: geometry.size.width,height: geometry.size.height/9)
                         .padding(.bottom)
-                        if allFetchedData != []{
+                        if displayCalendarView{
                             CalendarView(didSelectDateSubject: viewModel.didSelectDateSubject, judgeShowingAddViewSubject: viewModel.isShowingAddView, allData: $allFetchedData)
                                 .frame(width: geometry.size.width, height: geometry.size.height/9*7)
                                 .padding(.bottom)
@@ -46,6 +47,7 @@ struct CompassionCalendarView: View {
             Task{
                 do{
                     allFetchedData = try await viewModel.fetchAllDiary()
+                    displayCalendarView = true
                 }catch{
                     throw error
                 }
