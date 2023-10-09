@@ -34,12 +34,6 @@ struct CalendarView: UIViewRepresentable {
         calendarView.locale = Locale(identifier: "ja")
         let selection = UICalendarSelectionSingleDate(delegate: context.coordinator)
         calendarView.selectionBehavior = selection
-//        let dateComponents = allData.map { data in
-//            let id = data.id
-//            let date = dateformatter.stringToDate(string: id!)
-//            let timeZone =  TimeZone(identifier: "Asia/Tokyo")
-//            return Calendar.current.dateComponents(in: timeZone!, from: date)
-//        }
         calendarView.reloadDecorations(forDateComponents: [calendarView.visibleDateComponents], animated: true)
         return calendarView
     }
